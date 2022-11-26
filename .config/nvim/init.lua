@@ -1,0 +1,11 @@
+require("bootstrap")(function()
+	require("options")
+	require("mappings")
+	require("hosts")
+	require("packages")
+	require("commands")
+	require("lsp")
+	require("diagnostic")
+	require("config")
+end)
+
