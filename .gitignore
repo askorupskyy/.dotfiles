@@ -1,4 +1,6 @@
 downloads
-.config/iterm2
+.config/*
+!.config/nvim
+!.config/yarn
 .config/yarn/global/node_modules
 ~
