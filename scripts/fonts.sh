@@ -1,4 +1,4 @@
-#!/usr/local/bin/zsh
+#!/bin/zsh
 
 # this script is designed to download all the fonts i use on my system
 wget=/usr/local/bin/wget
@@ -11,7 +11,7 @@ fontList=(
 echo "downloading fonts..."
 
 for i in {1..$#fontList}; do
-  $wget "${fontList[i]}" -P $FONT_DIR -q
+  eval wget "${fontList[i]}" -P $FONT_DIR -q
 done
 
 echo "DOWNLOADING: DONE!"
@@ -29,5 +29,5 @@ echo "UNZIPPING: DONE!"
 echo "installing fonts:"
 for entry in "$FONT_DIR"/*.ttf; do
   # install a font using a semantic link
-  ln -s "$entry" ~/Library/Fonts/
+  mv "$entry" ~/Library/Fonts/
 done

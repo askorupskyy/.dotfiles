@@ -107,7 +107,7 @@ if is_lspconfig_present then
     },
     init_options = {
       typescript = {
-        serverPath = "/Users/rcbxd/.config/yarn/global/node_modules/typescript/lib/tsserverlibrary.js",
+        serverPath = "/Users/bamboolio/.config/yarn/global/node_modules/typescript/lib/tsserverlibrary.js",
       },
     }
 

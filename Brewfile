@@ -50,8 +50,7 @@ brew "docker"
 brew "wget"
 brew "postgresql@14"
 brew "go"
-# node version manager
-brew "nvm"
+brew "lazygit"
 
 # apps i use on daily basis
 cask "discord"
