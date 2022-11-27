@@ -26,6 +26,8 @@ export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || pr
 
 # install nvm, yarn, and global packages
 eval nvm install --lts
+# install node 16.16.0 for copilot to work on apple sillicon
+eval nvm install 16.16.0
 eval npm install -g yarn
 eval yarn install
 
