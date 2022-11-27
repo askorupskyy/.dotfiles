@@ -75,6 +75,8 @@ vim.cmd([[set listchars+=tab:\ \ ,eol:¬,extends:…,precedes:…]])
 -- syntax highlight for embedded code
 vim.g.vimsyn_embed = "l"
 
+vim.g.copilot_node_command = "~/.nvm/versions/node/v16.16.0/bin/node"
+
 -- disable builtins
 vim.g.loaded_gzip = 1
 vim.g.loaded_zip = 1
