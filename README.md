@@ -3,5 +3,7 @@
 ## Installation
 
 1. `xcode-select --install`
-2. `git clone https://github.com/rcbxd/.dotfiles.git`
-3. `./init.sh`
+2. `cd ~`
+3. `git clone https://github.com/rcbxd/.dotfiles.git`
+4. `cd .dotfiles`
+5. `./init.sh`
