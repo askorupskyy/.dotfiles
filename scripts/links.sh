@@ -1,4 +1,4 @@
-#!/usr/bin/local/zsh
+#!/bin/zsh
 
 # this script is designed to create the symantic links for all of the configs in this dotfiles repo
 

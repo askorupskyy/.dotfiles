@@ -1,4 +1,4 @@
-#!/usr/local/bin/zsh
+#!/bin/zsh
 
 # this script is desgined to install the language server protocols that cannot be installed with node
 
