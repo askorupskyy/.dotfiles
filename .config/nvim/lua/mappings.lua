@@ -71,3 +71,7 @@ map("n", "<Leader>tv", ":vnew +terminal<CR>", opts)
 -- CoC mappings
 -- eslint when clicking <space>cl
 map("n", "<Leader>cl", ":CocCommand eslint.executeAutofix<CR>", opts)
+
+-- Center the cursor on screen when going page-up or page-down
+map("n", "<C-u>", "<C-u>zz", opts)
+map("n", "<C-d>", "<C-d>zz", opts)
