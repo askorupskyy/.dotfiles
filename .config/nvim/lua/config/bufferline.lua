@@ -5,7 +5,6 @@ require("bufferline").setup({
     modified_icon = "",
     max_prefix_length = 15,
     tab_size = 18,
-    separator_style = {"", ""},
     sort_by = "directory",
     mode = "tabs",
     truncate_names = true,

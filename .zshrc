@@ -120,3 +120,5 @@ export NVM_DIR="$HOME/.nvm"
 
 export PATH="$HOME/.pyenv/bin:$PATH"
 eval "$(pyenv init -)"
+
+alias nvide="neovide --frame buttonless"
