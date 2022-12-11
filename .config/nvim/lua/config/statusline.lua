@@ -16,7 +16,7 @@ local theme = {
 		c = { fg = colors.dark_black, bg = colors.dark_black },
 		x = { fg = colors.dark_black, bg = colors.dark_black },
 		y = { fg = colors.light_gray, bg = colors.dark_black },
-		z = { fg = colors.light_gray, bg = colors.dark_black },
+		z = { fg = colors.dark_black, bg = colors.blue},
 	},
 	insert = {
 		a = { fg = colors.dark_black, bg = colors.green },
@@ -24,7 +24,7 @@ local theme = {
 		c = { fg = colors.dark_black, bg = colors.dark_black },
 		x = { fg = colors.dark_black, bg = colors.dark_black },
 		y = { fg = colors.light_gray, bg = colors.dark_black },
-		z = { fg = colors.light_gray, bg = colors.dark_black },
+		z = { fg = colors.dark_black, bg = colors.green },
 	},
 	command = {
 		a = { fg = colors.dark_black, bg = colors.red },
@@ -32,7 +32,7 @@ local theme = {
 		c = { fg = colors.dark_black, bg = colors.dark_black },
 		x = { fg = colors.dark_black, bg = colors.dark_black },
 		y = { fg = colors.light_gray, bg = colors.dark_black },
-		z = { fg = colors.light_gray, bg = colors.dark_black },
+		z = { fg = colors.dark_black, bg = colors.red },
 	},
 	visual = {
 		a = { fg = colors.dark_black, bg = colors.cyan },
@@ -40,7 +40,7 @@ local theme = {
 		c = { fg = colors.dark_black, bg = colors.dark_black },
 		x = { fg = colors.dark_black, bg = colors.dark_black },
 		y = { fg = colors.light_gray, bg = colors.dark_black },
-		z = { fg = colors.light_gray, bg = colors.dark_black },
+		z = { fg = colors.dark_black, bg = colors.cyan },
 	},
 	replace = {
 		a = { fg = colors.dark_black, bg = colors.red },
@@ -48,7 +48,7 @@ local theme = {
 		c = { fg = colors.dark_black, bg = colors.dark_black },
 		x = { fg = colors.dark_black, bg = colors.dark_black },
 		y = { fg = colors.light_gray, bg = colors.dark_black },
-		z = { fg = colors.light_gray, bg = colors.dark_black },
+		z = { fg = colors.dark_black, bg = colors.red },
 	},
 	inactive = {
 		a = { fg = colors.light_gray, bg = colors.dark_black },
@@ -67,33 +67,33 @@ local setup_lualine = function()
 				icons_enabled = true,
 				theme = theme,
 				globalstatus = true,
-				component_separators = { left = "", right = "" },
-				section_separators = { left = "", right = "" },
+				component_separators = "|",
+				section_separators = { left = "", right = "" },
 				disabled_filetypes = {},
 				always_divide_middle = true,
 				padding = 1,
 			},
 			sections = {
-				lualine_a = {
-					-- {
-					-- 	"mode",
-					-- 	fmt = function()
-					-- 		return " "
-					-- 	end,
-					-- },
-				},
+        lualine_a = {
+          { 'mode', separator = { left = '' }, right_padding = 2 },
+        },
 				lualine_b = {
-					{
-						"filename",
-						path = 3,
-						padding = 2,
-						symbols = { modified = " [+]", readonly = " [-]", unnamed = "[No Name]" },
-					},
+					"filename",
+          {
+            "branch",
+            icon = "",
+          },
+          "diff"
 				},
-				lualine_c = {},
+				lualine_c = {"fileformat"},
 				lualine_x = {},
-				lualine_y = { { "diagnostics", sources = { "nvim_diagnostic" }, padding = 2 } },
-				lualine_z = { { "branch", icon = "" }, { "diff" }, { "location" }, { "progress" } },
+				lualine_y = { 
+          { "diagnostics", sources = { "nvim_diagnostic" }, left_padding = 2, separator = { right = '' }, },
+        },
+				lualine_z = {
+          { "location", left_padding = 2,},
+          { "progress", left_padding = 2, separator = { right = '' }, },
+        },
 			},
 			inactive_sections = {
 				lualine_a = { "filename" },

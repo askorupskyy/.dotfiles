@@ -30,7 +30,7 @@ vim.opt.termguicolors = true
 vim.opt.syntax = "on"
 vim.opt.background = "dark"
 
-vim.opt.guifont = { "JetBrainsMono Nerd Font Mono", ":h14" }
+vim.opt.guifont = { "JetBrainsMono Nerd Font Mono", ":h16" }
 vim.g.terminal_color_0 = '#282a36'
 vim.g.terminal_color_1 = '#f37f97'
 vim.g.terminal_color_2 = '#5adecd'

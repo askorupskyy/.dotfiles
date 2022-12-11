@@ -89,4 +89,6 @@ return require("packer").startup(function(use)
     -- use("wuelnerdotexe/vim-astro")
     -- editorconfig support
     use("gpanders/editorconfig.nvim")
+    -- buffer line
+    use("akinsho/nvim-bufferline.lua")
   end)
