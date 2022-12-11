@@ -30,7 +30,7 @@ vim.opt.termguicolors = true
 vim.opt.syntax = "on"
 vim.opt.background = "dark"
 
-vim.opt.guifont = { "JetBrainsMono Nerd Font Mono", ":h16" }
+vim.opt.guifont = { "JetBrainsMono Nerd Font Mono", ":h14" }
 vim.g.terminal_color_0 = '#282a36'
 vim.g.terminal_color_1 = '#f37f97'
 vim.g.terminal_color_2 = '#5adecd'
@@ -48,6 +48,8 @@ vim.g.terminal_color_13 = '#b043d1'
 vim.g.terminal_color_14 = '#3fdcee'
 vim.g.terminal_color_15 = '#bebec1'
 vim.g.neovide_background_color = 'dark'
+vim.g.neovide_confirm_quit = false
+vim.g.neovide_remember_window_size = true
 
 if pcall(require, "darkside") then
 	vim.g.colors_name = "darkside"
