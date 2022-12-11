@@ -159,6 +159,11 @@ _G.packer_plugins = {
     path = "/Users/bamboolio/.local/share/nvim/site/pack/packer/start/lush.nvim",
     url = "https://github.com/rktjmp/lush.nvim"
   },
+  ["markdown-preview.nvim"] = {
+    loaded = true,
+    path = "/Users/bamboolio/.local/share/nvim/site/pack/packer/start/markdown-preview.nvim",
+    url = "https://github.com/iamcco/markdown-preview.nvim"
+  },
   matchit = {
     loaded = true,
     path = "/Users/bamboolio/.local/share/nvim/site/pack/packer/start/matchit",
