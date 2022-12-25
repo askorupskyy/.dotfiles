@@ -68,15 +68,11 @@ local setup_lualine = function()
 				theme = theme,
 				globalstatus = true,
 				component_separators = "|",
-				section_separators = { left = "", right = "" },
 				disabled_filetypes = {},
 				always_divide_middle = true,
-				padding = 1,
 			},
 			sections = {
-        lualine_a = {
-          { 'mode', separator = { left = '' }, right_padding = 2 },
-        },
+        lualine_a = { "mode" },
 				lualine_b = {
 					"filename",
           {
@@ -87,12 +83,12 @@ local setup_lualine = function()
 				},
 				lualine_c = {"fileformat"},
 				lualine_x = {},
-				lualine_y = { 
-          { "diagnostics", sources = { "nvim_diagnostic" }, left_padding = 2, separator = { right = '' }, },
+				lualine_y = {
+          { "diagnostics", sources = { "nvim_diagnostic" }, left_padding = 2 },
         },
 				lualine_z = {
           { "location", left_padding = 2,},
-          { "progress", left_padding = 2, separator = { right = '' }, },
+          { "progress", left_padding = 2 },
         },
 			},
 			inactive_sections = {

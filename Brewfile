@@ -50,6 +50,7 @@ brew "postgresql@14"
 brew "go"
 brew "lazygit"
 brew "neovide"
+brew "hugo"
 
 # apps i use on daily basis
 cask "discord"
