@@ -3,3 +3,7 @@
 	email = 50280805+rcbxd@users.noreply.github.com
 [credential]
 	helper = store
+[core]
+  editor = nvim
+[pull]
+	ff = only

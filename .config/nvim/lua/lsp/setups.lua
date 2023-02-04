@@ -116,6 +116,9 @@ if is_lspconfig_present then
   -- c++, c, swift
   lspconfig.sourcekit.setup{}
 
+  -- prisma orm
+  lspconfig.prismals.setup{}
+
 	-- https://github.com/jose-elias-alvarez/null-ls.nvim
 	if is_null_ls_present then
 		null_ls.setup({
