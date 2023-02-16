@@ -3,7 +3,7 @@
 # this is the init script for everything in this repo
 
 # install Homebrew
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+/bin/zsh -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 # add homebrew to path
 echo '# Set PATH, MANPATH, etc., for Homebrew.' >> ~/.zprofile
@@ -13,30 +13,33 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 # install all of the apps required 
 brew bundle --file=~/.dotfiles/Brewfile
 
-# install oh-my-zsh
-sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+# add homebrew to fish path
+echo '# Set PATH, MANPATH, etc., for Homebrew.' >> ~/.config/fish/config.fish
+echo 'eval (/opt/homebrew/bin/brew shellenv)' >> ~/.config/fish/config.fish
+/opt/homebrew/bin/fish -c 'eval "$(/opt/homebrew/bin/brew shellenv)"'
 
-# install powerlevel10k theme
-git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+# set fish as the default shell
+sudo bash -c 'echo $(which fish) >> /etc/shells'
+chsh -s $(which fish)
 
-# install nvm
-wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.2/install.sh | bash
-export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+# install fisher
+curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
+# install fish plugins
+/opt/homebrew/bin/fish -c "fisher update"
 
 # install nvm, yarn, and global packages
-eval nvm install --lts
+/opt/homebrew/bin/fish -c nvm install latest
 # install node 16.16.0 for copilot to work on apple sillicon
-eval nvm install 16.16.0
-eval npm install -g yarn
-eval yarn install
+/opt/homebrew/bin/fish -c nvm install 16.16.0
+/opt/homebrew/bin/fish -c nvm use latest
+/opt/homebrew/bin/fish -c npm install -g yarn
+/opt/homebrew/bin/fish -c npm install -g pnpm
+/opt/homebrew/bin/fish -c yarn install
 
-source ~/.dotfiles/.zshrc
-
-zsh ~/.dotfiles/scripts/lsp.sh
-zsh ~/.dotfiles/scripts/links.sh
-zsh ~/.dotfiles/scripts/fonts.sh
-zsh ~/.dotfiles/scripts/tools.sh
+/bin/zsh ~/.dotfiles/scripts/lsp.sh
+/bin/zsh ~/.dotfiles/scripts/links.sh
+/bin/zsh ~/.dotfiles/scripts/fonts.sh
+/bin/zsh ~/.dotfiles/scripts/tools.sh
 
 # setup the iterm config
 # specify the preferences directory

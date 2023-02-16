@@ -2,5 +2,6 @@ downloads
 .config/*
 !.config/nvim
 !.config/yarn
+!.config/fish
+.config/fish/*/**
 .config/yarn/global/node_modules
-~
