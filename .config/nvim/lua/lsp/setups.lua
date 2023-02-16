@@ -100,18 +100,8 @@ if is_lspconfig_present then
   -- python
   lspconfig.pyright.setup({})
 
-  -- astro.js
-  lspconfig.astro.setup({
-    filetypes = {
-      "astro",
-    },
-    init_options = {
-      typescript = {
-        serverPath = "/Users/bamboolio/.config/yarn/global/node_modules/typescript/lib/tsserverlibrary.js",
-      },
-    }
-
-  })
+  -- astro
+  lspconfig.astro.setup({})
 
   -- c++, c, swift
   lspconfig.sourcekit.setup{}
