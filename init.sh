@@ -15,10 +15,6 @@ eval "$brew_path shellenv" >> ~/.zprofile
 # install all of the apps required 
 brew bundle --file=~/.dotfiles/Brewfile
 
-# add homebrew to fish path
-echo '# Set PATH, MANPATH, etc., for Homebrew.' >> ~/.config/fish/config.fish
-echo "eval ($brew_path shellenv)" >> ~/.config/fish/config.fish
-
 # assign fish path to variable
 fish_path="$(which fish)"
 
@@ -27,8 +23,10 @@ sudo bash -c "echo $fish_path >> /etc/shells"
 chsh -s $fish_path
 
 # install fisher
-curl -sL https://git.io/fisher | source
-fisher install jorgebucaran/fisher
+$fish_path -c "curl -sL https://git.io/fisher | source & fisher install jorgebucaran/fisher"
+
+# add brew to fish path
+$fish_path -c "fish_add_path $brew_path"
 
 # install fish plugins
 $fish_path -c "fisher update"
