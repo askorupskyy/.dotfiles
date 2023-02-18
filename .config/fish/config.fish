@@ -9,3 +9,5 @@ set pure_show_system_time_pos = 'right';
 eval (/opt/homebrew/bin/brew shellenv)
 # Set PATH, MANPATH, etc., for Homebrew.
 eval (/opt/homebrew/bin/brew shellenv)
+# Set PATH, MANPATH, etc., for Homebrew.
+eval (/opt/homebrew/bin/brew shellenv)

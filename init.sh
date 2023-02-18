@@ -3,38 +3,44 @@
 # this is the init script for everything in this repo
 
 # install Homebrew
-/bin/zsh -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+# set brew path here
+brew_path="$(which brew)"
 
 # add homebrew to path
 echo '# Set PATH, MANPATH, etc., for Homebrew.' >> ~/.zprofile
-echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zprofile
-eval "$(/opt/homebrew/bin/brew shellenv)"
+eval "$brew_path shellenv" >> ~/.zprofile
 
 # install all of the apps required 
 brew bundle --file=~/.dotfiles/Brewfile
 
 # add homebrew to fish path
 echo '# Set PATH, MANPATH, etc., for Homebrew.' >> ~/.config/fish/config.fish
-echo 'eval (/opt/homebrew/bin/brew shellenv)' >> ~/.config/fish/config.fish
-/opt/homebrew/bin/fish -c 'eval "$(/opt/homebrew/bin/brew shellenv)"'
+echo "eval ($brew_path shellenv)" >> ~/.config/fish/config.fish
+
+# assign fish path to variable
+fish_path="$(which fish)"
 
 # set fish as the default shell
-sudo bash -c 'echo $(which fish) >> /etc/shells'
-chsh -s $(which fish)
+sudo bash -c "echo $fish_path >> /etc/shells"
+chsh -s $fish_path
 
 # install fisher
-curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
+curl -sL https://git.io/fisher | source
+fisher install jorgebucaran/fisher
+
 # install fish plugins
-/opt/homebrew/bin/fish -c "fisher update"
+$fish_path -c "fisher update"
 
 # install nvm, yarn, and global packages
-/opt/homebrew/bin/fish -c nvm install latest
+$fish_path -c "nvm install latest"
 # install node 16.16.0 for copilot to work on apple sillicon
-/opt/homebrew/bin/fish -c nvm install 16.16.0
-/opt/homebrew/bin/fish -c nvm use latest
-/opt/homebrew/bin/fish -c npm install -g yarn
-/opt/homebrew/bin/fish -c npm install -g pnpm
-/opt/homebrew/bin/fish -c yarn install
+$fish_path -c "nvm install 16.16.0"
+$fish_path -c "nvm use latest"
+$fish_path -c "npm install -g yarn"
+$fish_path -c "npm install -g pnpm"
+$fish_path -c "yarn install"
 
 /bin/zsh ~/.dotfiles/scripts/lsp.sh
 /bin/zsh ~/.dotfiles/scripts/links.sh
