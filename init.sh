@@ -20,7 +20,7 @@ fish_path="$(which fish)"
 
 # set fish as the default shell
 sudo bash -c "echo $fish_path >> /etc/shells"
-chsh -s $fish_path
+sudo chsh -s $fish_path
 
 # install fisher
 $fish_path -c "curl -sL https://git.io/fisher | source & fisher install jorgebucaran/fisher"
@@ -36,9 +36,8 @@ $fish_path -c "nvm install latest"
 # install node 16.16.0 for copilot to work on apple sillicon
 $fish_path -c "nvm install 16.16.0"
 $fish_path -c "nvm use latest"
-$fish_path -c "npm install -g yarn"
-$fish_path -c "npm install -g pnpm"
-$fish_path -c "yarn install"
+sudo $fish_path -c "nvm use latest & npm install -g yarn pnpm"
+$fish_path -c "nvm use latest & yarn install"
 
 /bin/zsh ~/.dotfiles/scripts/lsp.sh
 /bin/zsh ~/.dotfiles/scripts/links.sh

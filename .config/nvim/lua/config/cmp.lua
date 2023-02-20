@@ -22,12 +22,13 @@ if is_cmp_present then
 			["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
 			["<C-e>"] = cmp.mapping({ i = cmp.mapping.abort(), c = cmp.mapping.close() }),
 		},
-		sources = cmp.config.sources(
-			{ { name = "nvim_lsp" }, { name = "luasnip" } },
-			{ { name = "path" } },
-			{ { name = "buffer", keyword_length = 5 } }
-		),
-		experimental = { ghost_text = true },
+		sources = cmp.config.sources({
+			{ name = "nvim_lsp" }, -- lsp
+			{ name = "luasnip" }, -- snippets
+			{ name = "buffer" }, -- text within current buffer
+			{ name = "path" }, -- file system paths
+		}),
+		experimental = { ghost_text = false },
 		formatting = {
 			format = lspkind.cmp_format({
 				with_text = true,

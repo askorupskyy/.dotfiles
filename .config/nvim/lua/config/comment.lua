@@ -12,6 +12,8 @@ if is_comment_preset then
 				location = require("ts_context_commentstring.utils").get_visual_start_location()
 			end
 
+			require("ts_context_commentstring.integrations.comment_nvim").create_pre_hook()
+
 			return require("ts_context_commentstring.internal").calculate_commentstring({
 				key = ctx.ctype == U.ctype.line and "__default" or "__multiline",
 				location = location,

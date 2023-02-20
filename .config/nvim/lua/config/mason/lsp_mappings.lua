@@ -36,10 +36,6 @@ if is_lspconfig_present then
 				vim.cmd([[augroup END]])
 			end
 
-			if client.server_capabilities.documentRangeFormattingProvider then
-				vim.keymap.set("n", "<Leader>gf", vim.lsp.buf.formatting_sync, { buffer = args.buf })
-			end
-
 			if client.server_capabilities.hoverProvider then
 				vim.keymap.set("n", "K", vim.lsp.buf.hover, { buffer = args.buf })
 				vim.keymap.set("n", "<Leader>gh", vim.lsp.buf.hover, { buffer = args.buf })

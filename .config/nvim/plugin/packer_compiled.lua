@@ -84,11 +84,6 @@ _G.packer_plugins = {
     path = "/Users/bamboolio/.local/share/nvim/site/pack/packer/start/LuaSnip",
     url = "https://github.com/L3MON4D3/LuaSnip"
   },
-  ["blamer.nvim"] = {
-    loaded = true,
-    path = "/Users/bamboolio/.local/share/nvim/site/pack/packer/start/blamer.nvim",
-    url = "https://github.com/APZelos/blamer.nvim"
-  },
   ["cmp-buffer"] = {
     loaded = true,
     path = "/Users/bamboolio/.local/share/nvim/site/pack/packer/start/cmp-buffer",
@@ -164,6 +159,21 @@ _G.packer_plugins = {
     path = "/Users/bamboolio/.local/share/nvim/site/pack/packer/start/markdown-preview.nvim",
     url = "https://github.com/iamcco/markdown-preview.nvim"
   },
+  ["mason-lspconfig.nvim"] = {
+    loaded = true,
+    path = "/Users/bamboolio/.local/share/nvim/site/pack/packer/start/mason-lspconfig.nvim",
+    url = "https://github.com/williamboman/mason-lspconfig.nvim"
+  },
+  ["mason-null-ls.nvim"] = {
+    loaded = true,
+    path = "/Users/bamboolio/.local/share/nvim/site/pack/packer/start/mason-null-ls.nvim",
+    url = "https://github.com/jayp0521/mason-null-ls.nvim"
+  },
+  ["mason.nvim"] = {
+    loaded = true,
+    path = "/Users/bamboolio/.local/share/nvim/site/pack/packer/start/mason.nvim",
+    url = "https://github.com/williamboman/mason.nvim"
+  },
   matchit = {
     loaded = true,
     path = "/Users/bamboolio/.local/share/nvim/site/pack/packer/start/matchit",
@@ -193,11 +203,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/bamboolio/.local/share/nvim/site/pack/packer/start/nvim-colorizer.lua",
     url = "https://github.com/norcalli/nvim-colorizer.lua"
-  },
-  ["nvim-lsp-installer"] = {
-    loaded = true,
-    path = "/Users/bamboolio/.local/share/nvim/site/pack/packer/start/nvim-lsp-installer",
-    url = "https://github.com/williamboman/nvim-lsp-installer"
   },
   ["nvim-lspconfig"] = {
     loaded = true,
@@ -265,20 +270,10 @@ _G.packer_plugins = {
     path = "/Users/bamboolio/.local/share/nvim/site/pack/packer/start/todo-comments.nvim",
     url = "https://github.com/folke/todo-comments.nvim"
   },
-  ["typescript-vim"] = {
-    loaded = true,
-    path = "/Users/bamboolio/.local/share/nvim/site/pack/packer/start/typescript-vim",
-    url = "https://github.com/leafgarland/typescript-vim"
-  },
   ["vim-closetag"] = {
     loaded = true,
     path = "/Users/bamboolio/.local/share/nvim/site/pack/packer/start/vim-closetag",
     url = "https://github.com/alvan/vim-closetag"
-  },
-  ["vim-jsx-typescript"] = {
-    loaded = true,
-    path = "/Users/bamboolio/.local/share/nvim/site/pack/packer/start/vim-jsx-typescript",
-    url = "https://github.com/peitalin/vim-jsx-typescript"
   },
   ["vim-surround"] = {
     loaded = true,

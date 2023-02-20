@@ -4,8 +4,6 @@ require("bootstrap")(function()
 	require("hosts")
 	require("packages")
 	require("commands")
-	require("lsp")
 	require("diagnostic")
 	require("config")
 end)
-

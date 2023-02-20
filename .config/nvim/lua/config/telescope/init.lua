@@ -38,7 +38,7 @@ if is_telescope_present then
 			layout_strategy = "horizontal",
 			scroll_strategy = "cycle",
 			file_sorter = sorters.get_fzy_sorter,
-			file_ignore_patterns = { "node_modules/.*", ".git/.*", "yarn.lock" },
+			file_ignore_patterns = { "node_modules/.*", ".git/.*", "yarn.lock", ".next/.*" },
 			file_previewer = previewers.vim_buffer_cat.new,
 			grep_previewer = previewers.vim_buffer_vimgrep.new,
 			qflist_previewer = previewers.vim_buffer_qflist.new,
