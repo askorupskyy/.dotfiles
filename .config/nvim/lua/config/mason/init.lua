@@ -27,7 +27,6 @@ local ensure_installed_servers = {
 	"intelephense",
 	"jsonls",
 	"prismals",
-	"sumneko_lua",
 	"rust_analyzer",
 	"tailwindcss",
 	"tsserver",

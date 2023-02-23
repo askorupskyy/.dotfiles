@@ -31,24 +31,6 @@ if is_lspconfig_present then
 				filetypes = { "html", "tsx", "jsx", "vue" },
 			})
 		end,
-		["sumneko_lua"] = function()
-			lspconfig.sumneko_lua.setup({
-				capabilities = capabilities,
-				settings = {
-					Lua = {
-						format = { enable = false },
-						runtime = { version = "LuaJIT", path = vim.split(package.path, ";") },
-						diagnostics = { enable = true, globals = { "vim", "use", "cmp", "packer_plugins" } },
-						workspace = {
-							library = {
-								[vim.fn.expand("$VIMRUNTIME/lua")] = true,
-								[vim.fn.expand("$VIMRUNTIME/lua/vim/lsp")] = true,
-							},
-						},
-					},
-				},
-			})
-		end,
 		["tailwindcss"] = function()
 			lspconfig.tailwindcss.setup({
 				capabilities = capabilities,
