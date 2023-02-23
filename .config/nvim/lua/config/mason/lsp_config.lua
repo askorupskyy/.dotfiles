@@ -74,6 +74,7 @@ if is_lspconfig_present then
 		["tsserver"] = function()
 			lspconfig.tsserver.setup({
 				capabilities = capabilities,
+				root_dir = lspconfig.util.root_pattern(".git", "package.json"),
 				commands = {
 					OrganizeImports = {
 						description = "Organize Imports",

@@ -19,6 +19,7 @@ if is_web_icons_present then
 			mp4 = { icon = "", color = colors.light_gray, name = "mp4" },
 			out = { icon = "", color = colors.light_gray, name = "out" },
 			Dockerfile = { icon = "", color = colors.gray, name = "Dockerfile" },
+			dockerignore = { icon = "", color = colors.light_gray, name = "dockerignore" },
 			rb = { icon = "", color = colors.dark_red, name = "rb" },
 			vue = { icon = "﵂", color = colors.green, name = "vue" },
 			py = { icon = "", color = colors.yellow, name = "py" },
