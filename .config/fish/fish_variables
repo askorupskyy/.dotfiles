@@ -37,7 +37,8 @@ SETUVAR fish_pager_color_progress:brwhite\x1e\x2d\x2dbackground\x3dcyan
 SETUVAR fish_pager_color_selected_background:\x2dr
 SETUVAR fish_user_paths:/opt/homebrew/sbin\x1e/opt/homebrew/bin
 SETUVAR nvm_data:/Users/bamboolio/\x2elocal/share/nvm
-SETUVAR nvm_default_version:latest
+SETUVAR nvm_default_packages:yarn\x1enp
+SETUVAR nvm_default_version:19\x2e6\x2e0
 SETUVAR nvm_mirror:https\x3a//nodejs\x2eorg/dist
 SETUVAR pure_begin_prompt_with_current_directory:true
 SETUVAR pure_check_for_new_release:false
@@ -76,6 +77,7 @@ SETUVAR pure_show_jobs:false
 SETUVAR pure_show_prefix_root_prompt:false
 SETUVAR pure_show_subsecond_command_duration:false
 SETUVAR pure_show_system_time:true
+SETUVAR pure_show_system_time_pos:right
 SETUVAR pure_symbol_container_prefix:
 SETUVAR pure_symbol_git_dirty:\x2a
 SETUVAR pure_symbol_git_stash:\u2261
