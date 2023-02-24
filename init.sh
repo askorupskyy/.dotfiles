@@ -6,11 +6,11 @@
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 # set brew path here
-brew_path="$(which brew)"
+brew_path="$HOMEBREW_PREFIX/bin/brew"
 
 # add homebrew to path
 echo '# Set PATH, MANPATH, etc., for Homebrew.' >> ~/.zprofile
-eval "$brew_path shellenv" >> ~/.zprofile
+$brew_path shellenv >> ~/.zprofile
 
 # install all of the apps required 
 brew bundle --file=~/.dotfiles/Brewfile

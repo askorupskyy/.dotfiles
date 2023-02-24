@@ -3,5 +3,6 @@ downloads
 !.config/nvim
 !.config/yarn
 !.config/fish
+.config/fish/fish_variables
 .config/fish/*/**
 .config/yarn/global/node_modules
