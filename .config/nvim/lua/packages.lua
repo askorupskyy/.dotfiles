@@ -49,38 +49,47 @@ return require("packer").startup(function(use)
 	use("tpope/vim-surround")
 	-- Remove search highlight (:nohls) on cursor move
 	use("haya14busa/is.vim")
-    -- use("mustache/vim-mustache-handlebars")
-    -- github copilot for AI code completion
-    use("github/copilot.vim")
-    -- discord presence plugin for my friends to see what im doing
-    use("andweeb/presence.nvim")
-    -- markdown preview plugin
-    use({
-      "iamcco/markdown-preview.nvim",
-      run = function() vim.fn["mkdp#util#install"]() end,
-    })
+	-- use("mustache/vim-mustache-handlebars")
+	-- github copilot for AI code completion
+	use("github/copilot.vim")
+	-- discord presence plugin for my friends to see what im doing
+	use("andweeb/presence.nvim")
+	-- markdown preview plugin
+	use({
+		"iamcco/markdown-preview.nvim",
+		run = function()
+			vim.fn["mkdp#util#install"]()
+		end,
+	})
 
-    use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install", setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
-    -- todo comments for vim
-    use {
-      "folke/todo-comments.nvim",
-      requires = "nvim-lua/plenary.nvim",
-      config = function()
-        require("todo-comments").setup {
-          -- your configuration comes here
-          -- or leave it empty to use the default settings
-          -- refer to the configuration section below
-        }
-      end
-    }
-    -- matching pairs for html, css, json, yaml, and markdown
-    use("tmhedberg/matchit")
-    -- auto close html/jsx tags
-    use("alvan/vim-closetag")
-    -- change surrounding tags
-    use("tpope/vim-surround")
-    -- editorconfig support
-    use("gpanders/editorconfig.nvim")
-    -- buffer line
-    use("akinsho/nvim-bufferline.lua")
+	use({
+		"iamcco/markdown-preview.nvim",
+		run = "cd app && npm install",
+		setup = function()
+			vim.g.mkdp_filetypes = { "markdown" }
+		end,
+		ft = { "markdown" },
+	})
+	-- todo comments for vim
+	use({
+		"folke/todo-comments.nvim",
+		requires = "nvim-lua/plenary.nvim",
+		config = function()
+			require("todo-comments").setup({
+				-- your configuration comes here
+				-- or leave it empty to use the default settings
+				-- refer to the configuration section below
+			})
+		end,
+	})
+	-- matching pairs for html, css, json, yaml, and markdown
+	use("tmhedberg/matchit")
+	-- auto close html/jsx tags
+	use("alvan/vim-closetag")
+	-- change surrounding tags
+	use("tpope/vim-surround")
+	-- editorconfig support
+	use("gpanders/editorconfig.nvim")
+	-- buffer line
+	use("akinsho/nvim-bufferline.lua")
 end)

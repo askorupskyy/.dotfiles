@@ -21,6 +21,7 @@ if is_telescope_present then
 				"--column",
 				"--smart-case",
 				"--glob=!node_modules/*",
+				"--hidden",
 			},
 			mappings = {
 				i = {
