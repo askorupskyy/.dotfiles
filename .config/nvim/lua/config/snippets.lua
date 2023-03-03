@@ -6,5 +6,5 @@ if is_luasnip_present then
 		updateevents = "TextChanged,TextChangedI",
 	})
 
-	require("luasnip/loaders/from_vscode").load()
+    require("luasnip.loaders.from_vscode").lazy_load()
 end

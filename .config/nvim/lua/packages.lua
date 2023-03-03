@@ -1,79 +1,77 @@
-return require("packer").startup(function(use)
-	-- Packer manages itself
-	use("wbthomason/packer.nvim")
+return require("lazy").setup({
 	-- Neovim utils required by other pkgs
-	use("nvim-lua/plenary.nvim")
+	"nvim-lua/plenary.nvim",
 	-- Syntax highlights
-	use("rktjmp/lush.nvim")
-	use("pedropmedina/darkside")
+	"rktjmp/lush.nvim",
+	"pedropmedina/darkside",
 	-- color highlights
-	use("norcalli/nvim-colorizer.lua")
+	"norcalli/nvim-colorizer.lua",
 	-- File Icons
-	use("kyazdani42/nvim-web-devicons")
+	"kyazdani42/nvim-web-devicons",
 	-- Treesitter (syntax tree)
-	use({ "nvim-treesitter/nvim-treesitter" })
-	use("nvim-treesitter/nvim-treesitter-refactor")
-	use("nvim-treesitter/playground")
+	{ "nvim-treesitter/nvim-treesitter" },
+	"nvim-treesitter/nvim-treesitter-refactor",
+	"nvim-treesitter/playground",
 	-- Telescope (fuzzy finder)
-	use("nvim-telescope/telescope.nvim")
-	use("nvim-telescope/telescope-fzy-native.nvim")
-	use("nvim-telescope/telescope-file-browser.nvim")
+	"nvim-telescope/telescope.nvim",
+	"nvim-telescope/telescope-fzy-native.nvim",
+	"nvim-telescope/telescope-file-browser.nvim",
 	-- Git gutter signs
-	use("lewis6991/gitsigns.nvim")
+	"lewis6991/gitsigns.nvim",
 	-- Statusline
-	use("nvim-lualine/lualine.nvim")
+	"nvim-lualine/lualine.nvim",
 	-- Lsp, DAP, linters, formatters intaller (makes it so much easier)
-	use("williamboman/mason.nvim")
-	use("williamboman/mason-lspconfig.nvim")
-	use("neovim/nvim-lspconfig")
-	use("jose-elias-alvarez/null-ls.nvim")
-	use("jayp0521/mason-null-ls.nvim")
+	"williamboman/mason.nvim",
+	"williamboman/mason-lspconfig.nvim",
+	"neovim/nvim-lspconfig",
+	"jose-elias-alvarez/null-ls.nvim",
+	"jayp0521/mason-null-ls.nvim",
 	-- Cool icons in cmp dropdown
-	use("onsails/lspkind-nvim")
+	"onsails/lspkind-nvim",
 	-- Completion dropdown
-	use("hrsh7th/nvim-cmp")
-	use("hrsh7th/cmp-nvim-lsp")
-	use("hrsh7th/cmp-buffer")
-	use("hrsh7th/cmp-path")
-	use("hrsh7th/cmp-cmdline")
-	use("saadparwaiz1/cmp_luasnip")
+	"hrsh7th/nvim-cmp",
+	"hrsh7th/cmp-nvim-lsp",
+	"hrsh7th/cmp-buffer",
+	"hrsh7th/cmp-path",
+	"hrsh7th/cmp-cmdline",
+	"saadparwaiz1/cmp_luasnip",
 	-- Autoclosing ([{''}])
-	use("windwp/nvim-autopairs")
+	"windwp/nvim-autopairs",
 	-- Snippets
-	use("L3MON4D3/LuaSnip")
-	use("rafamadriz/friendly-snippets")
+	"L3MON4D3/LuaSnip",
+	"rafamadriz/friendly-snippets",
 	-- Comment code with gc, gcc ...
-	use("numToStr/Comment.nvim")
-	use("JoosepAlviste/nvim-ts-context-commentstring")
+	"numToStr/Comment.nvim",
+	"JoosepAlviste/nvim-ts-context-commentstring",
 	-- Wrap, change, remove content with s, sr, sd
-	use("tpope/vim-surround")
+	"tpope/vim-surround",
 	-- Remove search highlight (:nohls) on cursor move
-	use("haya14busa/is.vim")
-	-- use("mustache/vim-mustache-handlebars")
+	"haya14busa/is.vim",
+	-- "mustache/vim-mustache-handlebars")
 	-- github copilot for AI code completion
-	use("github/copilot.vim")
+	"github/copilot.vim",
 	-- discord presence plugin for my friends to see what im doing
-	use("andweeb/presence.nvim")
+	"andweeb/presence.nvim",
 	-- markdown preview plugin
-	use({
+	{
 		"iamcco/markdown-preview.nvim",
-		run = function()
+		build = function()
 			vim.fn["mkdp#util#install"]()
 		end,
-	})
+	},
 
-	use({
+	{
 		"iamcco/markdown-preview.nvim",
-		run = "cd app && npm install",
-		setup = function()
+		build = "cd app && npm install",
+		config = function()
 			vim.g.mkdp_filetypes = { "markdown" }
 		end,
 		ft = { "markdown" },
-	})
+	},
 	-- todo comments for vim
-	use({
+	{
 		"folke/todo-comments.nvim",
-		requires = "nvim-lua/plenary.nvim",
+		dependencies = {"nvim-lua/plenary.nvim"},
 		config = function()
 			require("todo-comments").setup({
 				-- your configuration comes here
@@ -81,15 +79,15 @@ return require("packer").startup(function(use)
 				-- refer to the configuration section below
 			})
 		end,
-	})
+	},
 	-- matching pairs for html, css, json, yaml, and markdown
-	use("tmhedberg/matchit")
+	"tmhedberg/matchit",
 	-- auto close html/jsx tags
-	use("alvan/vim-closetag")
+	"alvan/vim-closetag",
 	-- change surrounding tags
-	use("tpope/vim-surround")
+	"tpope/vim-surround",
 	-- editorconfig support
-	use("gpanders/editorconfig.nvim")
+	"gpanders/editorconfig.nvim",
 	-- buffer line
-	use("akinsho/nvim-bufferline.lua")
-end)
+	"akinsho/nvim-bufferline.lua",
+})
