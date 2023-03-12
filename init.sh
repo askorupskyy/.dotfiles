@@ -1,28 +1,31 @@
 #!/bin/zsh
 
-# TODO: FINISH THIS LATER
-# OS="$(uname)"
-#
-# if [[ "${OS}" == "Darwin" ]] then
-#   UNAME_MACHINE="$(/usr/bin/uname -m)"
-#   if [[ "${UNAME_MACHINE}" == "arm64" ]] then
-#     HOMEBREW_PREFIX="/opt/homebrew"
-#   else
-#     HOMEBREW_PREFIX="/usr/local"
-#   fi
-# else if [[ "${OS}" == "Linux" ]] then
-#   HOMEBREW_PREFIX="/home/linuxbrew/.linuxbrew"
-# else
-#   abort "Homebrew is only supported on macOS and Linux."
-# fi
-
 # this is the init script for everything in this repo
+
+# this will get the homebrew instalation path:
+# copied from homebrew installer: https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh
+OS="$(uname)"
+
+if [ "$OS" = "Darwin" ]; then
+  UNAME_MACHINE="$(/usr/bin/uname -m)"
+  if [ "$UNAME_MACHINE" = "arm64" ]; then
+    HOMEBREW_PREFIX="/opt/homebrew"
+  else
+    HOMEBREW_PREFIX="/usr/local"
+  fi
+elif [ "$OS" = "Linux" ]; then
+  HOMEBREW_PREFIX="/home/linuxbrew/.linuxbrew"
+else
+  abort "Homebrew is only supported on macOS and Linux."
+fi
 
 # install Homebrew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 # set brew path here
-brew_path=/opt/homebrew/bin
+brew_path=$HOMEhomebrewBREW_PREFIX/bin
+
+echo $brew_path
 
 # add homebrew to path
 (echo; echo 'eval "$(/opt/homebrew/bin/brew shellenv)"') >> ~/.dotfiles/.zshrc
@@ -61,6 +64,11 @@ $fish_path -c "nvm use latest & yarn install"
 /bin/zsh ~/.dotfiles/scripts/links.sh
 /bin/zsh ~/.dotfiles/scripts/fonts.sh
 /bin/zsh ~/.dotfiles/scripts/tools.sh
+
+# terminate the script if the OS is not mac
+if [ "$OS" = "Linux" ]; then
+  exit 1
+fi
 
 # setup the iterm config
 # specify the preferences directory
