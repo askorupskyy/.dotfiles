@@ -22,7 +22,6 @@ local ensure_installed_servers = {
 	"dotls",
 	"elixirls",
 	"gopls",
-	"graphql",
 	"html",
 	"intelephense",
 	"jsonls",
@@ -33,7 +32,6 @@ local ensure_installed_servers = {
 	"vimls",
 	"vuels",
 	"yamlls",
-	"intelephense",
 }
 
 mason.setup()

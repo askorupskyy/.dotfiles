@@ -8,6 +8,11 @@ if is_lspconfig_present then
 			vim.keymap.set("n", "<Leader>dl", vim.diagnostic.open_float, { buffer = args.buf })
 			vim.keymap.set("n", "<Leader>dk", vim.diagnostic.goto_prev, { buffer = args.buf })
 			vim.keymap.set("n", "<Leader>dj", vim.diagnostic.goto_next, { buffer = args.buf })
+			vim.keymap.set("n", "<space>wa", vim.lsp.buf.add_workspace_folder, opts)
+			vim.keymap.set("n", "<space>wr", vim.lsp.buf.remove_workspace_folder, opts)
+			vim.keymap.set("n", "<space>wl", function()
+				print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
+			end, opts)
 
 			if client.server_capabilities.definitionProvider then
 				vim.keymap.set("n", "<Leader>gd", vim.lsp.buf.definition, { buffer = args.buf })

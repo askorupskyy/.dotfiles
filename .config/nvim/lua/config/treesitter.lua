@@ -15,6 +15,7 @@ local ensured_installed_parsers = {
 	"diff",
 	"dot",
 	"elixir",
+	"fish",
 	"go",
 	"graphql",
 	"html",

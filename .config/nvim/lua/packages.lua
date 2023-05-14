@@ -55,7 +55,7 @@ return require("lazy").setup({
 	-- markdown preview plugin
 	{
 		"iamcco/markdown-preview.nvim",
-		build = function()
+		run = function()
 			vim.fn["mkdp#util#install"]()
 		end,
 	},
@@ -66,12 +66,12 @@ return require("lazy").setup({
 		config = function()
 			vim.g.mkdp_filetypes = { "markdown" }
 		end,
-		ft = { "markdown" },
+		ft = "markdown",
 	},
 	-- todo comments for vim
 	{
 		"folke/todo-comments.nvim",
-		dependencies = {"nvim-lua/plenary.nvim"},
+		dependencies = { "nvim-lua/plenary.nvim" },
 		config = function()
 			require("todo-comments").setup({
 				-- your configuration comes here
@@ -90,4 +90,6 @@ return require("lazy").setup({
 	"gpanders/editorconfig.nvim",
 	-- buffer line
 	"akinsho/nvim-bufferline.lua",
+	-- project-wide diagnostics
+	"folke/trouble.nvim",
 })
