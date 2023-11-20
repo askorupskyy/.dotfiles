@@ -698,6 +698,8 @@
 			<string>307E955E-890D-4892-A5C7-919D6B842A13</string>
 			<key>Horizontal Spacing</key>
 			<real>1</real>
+			<key>Icon</key>
+			<integer>1</integer>
 			<key>Idle Code</key>
 			<integer>0</integer>
 			<key>Jobs to Ignore</key>
@@ -1161,7 +1163,7 @@
 	<key>PromptOnQuit</key>
 	<false/>
 	<key>ShowFullScreenTabBar</key>
-	<true/>
+	<false/>
 	<key>SoundForEsc</key>
 	<false/>
 	<key>StatusBarPosition</key>

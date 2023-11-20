@@ -38,6 +38,8 @@ if is_lspconfig_present then
 					includeLanguages = {
 						typescript = "javascript",
 						typescriptreact = "javascript",
+						javascript = "javascript",
+						javascriptreact = "javascript",
 					},
 					tailwindCSS = {
 						experimental = {

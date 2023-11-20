@@ -24,22 +24,23 @@ if is_telescope_present then
 				"--hidden",
 			},
 			mappings = {
-				i = {
+				n = {
 					["<C-s>"] = actions.select_horizontal,
 					["œ"] = send_selected_to_qflist,
 				},
 			},
-			layout_config = { prompt_position = "top", preview_cutoff = 200 },
+			layout_config = { prompt_position = "bottom", preview_cutoff = 120 },
 			prompt_prefix = "  ",
 			selection_caret = "  ",
 			selection_strategy = "reset",
 			sorting_strategy = "ascending",
 			winblend = 2,
 			borderchars = { " ", " ", " ", " ", " ", " ", " ", " " },
+			--[[ borderchars = { "─", "│", "─", "│", "╭", "╮", "╯", "╰" }, ]]
 			layout_strategy = "horizontal",
 			scroll_strategy = "cycle",
 			file_sorter = sorters.get_fzy_sorter,
-			file_ignore_patterns = { "node_modules/.*", ".git/.*", "yarn.lock", ".next/.*" },
+			--[[ file_ignore_patterns = { "node_modules/.*", ".git/.*", "yarn.lock", ".next/.*" }, ]]
 			file_previewer = previewers.vim_buffer_cat.new,
 			grep_previewer = previewers.vim_buffer_vimgrep.new,
 			qflist_previewer = previewers.vim_buffer_qflist.new,
