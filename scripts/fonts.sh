@@ -5,7 +5,7 @@ wget=/usr/local/bin/wget
 FONT_DIR=~/.dotfiles/downloads/fonts
 
 fontList=(
-  "https://github.com/ryanoasis/nerd-fonts/releases/download/v2.2.2/JetBrainsMono.zip"
+  "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.1.1/JetBrainsMono.zip"
 )
 
 echo "downloading fonts..."

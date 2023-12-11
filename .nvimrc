@@ -1,4 +1,3 @@
-
 set path=.,src
 set suffixesadd=.js,.jsx,.astro,.vue
 
