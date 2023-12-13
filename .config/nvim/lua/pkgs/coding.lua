@@ -252,12 +252,33 @@ return {
 
   ----------------------------------------------------
   -- github copilot
-  -- https://github.com/github/copilot.vim
+  -- https://github.com/zbirenbaum/copilot.lua
   --
   -- Github's tool for AI auto-completion
+  -- Pure lua implementation of Copilot
   ----------------------------------------------------
   {
-    "github/copilot.vim",
-    event = "BufRead",
+    "zbirenbaum/copilot.lua",
+    cmd = "Copilot",
+    build = ":Copilot auth",
+    opts = {
+      suggestion = {
+        enabled = true,
+        auto_trigger = true,
+        keymap = {
+          accept = "<M-l>",
+          accept_word = false,
+          accept_line = true,
+          next = "<leader>cn",
+          prev = "<M-[>",
+          dismiss = "<C-]>",
+        },
+      },
+      panel = { enabled = false },
+      filetypes = {
+        markdown = true,
+        help = true,
+      },
+    },
   },
 }
