@@ -63,7 +63,7 @@ return {
       { "<leader>fb", "<cmd>Telescope buffers sort_mru=true sort_lastused=true<cr>", desc = "Buffers" },
       { "<leader>fc", Util.telescope.config_files(), desc = "Find Config File" },
       { "<leader>ff", Util.telescope("files"), desc = "Find Files (root dir)" },
-      { "<leader>fF", Util.telescope("files", { cwd = true }), desc = "Find Files (cwd)" },
+      { "<leader>fF", Util.telescope("files", { cwd = false, hidden = true }), desc = "Find Files (cwd)" },
       { "<leader>fr", "<cmd>Telescope oldfiles<cr>", desc = "Recent" },
       { "<leader>fR", Util.telescope("oldfiles", { cwd = vim.loop.cwd() }), desc = "Recent (cwd)" },
       -- git
@@ -130,8 +130,8 @@ return {
 
       return {
         defaults = {
-          layout_config = { prompt_position = "top", preview_cutoff = 200 },
-          prompt_prefix = "  ",
+          layout_config = { prompt_position = "top", preview_cutoff = 100 },
+          prompt_prefix = " > ",
           selection_caret = "  ",
           selection_strategy = "reset",
           sorting_strategy = "ascending",

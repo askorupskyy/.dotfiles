@@ -24,6 +24,7 @@ brew "lazygit"
 brew "neovide"
 brew "hugo"
 brew "fish"
+brew "gsed"
 
 # apps i use on daily basis
 cask "discord"
