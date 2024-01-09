@@ -28,11 +28,11 @@ brew "gsed"
 
 # apps i use on daily basis
 cask "discord"
+cask "arc"
 cask "microsoft-teams"
 cask "spotify"
-cask "google-chrome"
 cask "telegram"
-cask "notion"
 cask "insomnia"
 cask "slack"
 cask "docker"
+cask "obsidian"
