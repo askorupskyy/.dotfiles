@@ -167,7 +167,6 @@ return {
             return msg
           end
           for _, client in ipairs(clients) do
-            ---@diagnostic disable-next-line: undefined-field
             local filetypes = client.config.filetypes
             if filetypes and vim.fn.index(filetypes, buf_ft) ~= -1 then
               return client.name
@@ -213,14 +212,14 @@ return {
         override = {
           html = { icon = "", color = colors.red, name = "html" },
           css = { icon = "", color = colors.blue, name = "css" },
-          js = { icon = "", color = colors.yellow, name = "js" },
+          js = { icon = "", color = colors.yellow, name = "js" },
           ts = { icon = "", color = colors.blue, name = "ts" },
           jsx = { icon = "", color = colors.lavender, name = "jsx" },
           tsx = { icon = "", color = colors.lavender, name = "jsx" },
           json = { icon = "", color = colors.yellow, name = "json" },
-          png = { icon = "", color = colors.mantle, name = "png" },
-          jpg = { icon = "", name = "jpg" },
-          jpeg = { icon = "", color = colors.mantle, name = "jpeg" },
+          png = { icon = "", color = colors.mantle, name = "png" },
+          jpg = { icon = "", name = "jpg" },
+          jpeg = { icon = "", color = colors.mantle, name = "jpeg" },
           mp3 = { icon = "", color = colors.mantle, name = "mp3" },
           mp4 = { icon = "", color = colors.mantle, name = "mp4" },
           out = { icon = "", color = colors.mantle, name = "out" },
@@ -292,12 +291,10 @@ return {
     "stevearc/dressing.nvim",
     lazy = true,
     init = function()
-      ---@diagnostic disable-next-line: duplicate-set-field
       vim.ui.select = function(...)
         require("lazy").load({ plugins = { "dressing.nvim" } })
         return vim.ui.select(...)
       end
-      ---@diagnostic disable-next-line: duplicate-set-field
       vim.ui.input = function(...)
         require("lazy").load({ plugins = { "dressing.nvim" } })
         return vim.ui.input(...)

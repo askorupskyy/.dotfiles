@@ -24,3 +24,11 @@ complete -c git -n '__fish_seen_subcommand_from unstage' -a '(__fish_complete_pa
 function fish_user_key_bindings
     bind \cc 'commandline ""'
 end
+
+# pnpm
+set -gx PNPM_HOME "/Users/bamboolio/Library/pnpm"
+set -gx PATH "$PNPM_HOME" $PATH
+# pnpm end
+# bun
+set --export BUN_INSTALL "$HOME/.bun"
+set --export PATH $BUN_INSTALL/bin $PATH

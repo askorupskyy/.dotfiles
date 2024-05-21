@@ -224,7 +224,11 @@ return {
   {
     "windwp/nvim-ts-autotag",
     event = "LazyFile",
-    opts = {},
+    opts = {
+      autotag = {
+        enable_close_on_slash = false,
+      },
+    },
   },
 
   ----------------------------------------------------
@@ -246,38 +250,6 @@ return {
         highlight = "sh", -- Highlight surrounding
         replace = "sr", -- Replace surrounding
         update_n_lines = "sn", -- Update `n_lines`
-      },
-    },
-  },
-
-  ----------------------------------------------------
-  -- github copilot
-  -- https://github.com/zbirenbaum/copilot.lua
-  --
-  -- Github's tool for AI auto-completion
-  -- Pure lua implementation of Copilot
-  ----------------------------------------------------
-  {
-    "zbirenbaum/copilot.lua",
-    cmd = "Copilot",
-    build = ":Copilot auth",
-    opts = {
-      suggestion = {
-        enabled = true,
-        auto_trigger = true,
-        keymap = {
-          accept = "<M-l>",
-          accept_word = false,
-          accept_line = true,
-          next = "<leader>cn",
-          prev = "<M-[>",
-          dismiss = "<C-]>",
-        },
-      },
-      panel = { enabled = false },
-      filetypes = {
-        markdown = true,
-        help = true,
       },
     },
   },
