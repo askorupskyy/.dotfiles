@@ -261,6 +261,13 @@ return {
         tailwindcss = {
           settings = {
             tailwindCSS = {
+              includeLanguages = {
+                astro = "html",
+                javascript = "javascript",
+                javascriptreact = "javascriptreact",
+                typescript = "typescript",
+                typescriptreact = "typescriptreact",
+              },
               experimental = {
                 classRegex = {
                   "tw`([^`]*)",

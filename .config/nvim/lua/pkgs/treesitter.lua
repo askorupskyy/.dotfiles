@@ -69,7 +69,7 @@ return {
     ---@diagnostic disable-next-line: missing-fields
     opts = {
       highlight = { enable = true },
-      indent = { enable = true },
+      indent = { enable = true, disable = { "python" } },
       ensure_installed = {
         "bash",
         "c",

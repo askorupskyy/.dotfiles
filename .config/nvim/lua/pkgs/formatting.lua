@@ -80,6 +80,7 @@ return {
           ["markdown.mdx"] = { "prettier" },
           ["graphql"] = { "prettier" },
           ["handlebars"] = { "prettier" },
+          ["python"] = { "autopep8" },
         },
         ---@type table<string, conform.FormatterConfigOverride|fun(bufnr: integer): nil|conform.FormatterConfigOverride>
         formatters = {

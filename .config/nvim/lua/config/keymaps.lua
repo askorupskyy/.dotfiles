@@ -171,6 +171,7 @@ map("n", "<leader><tab><tab>", "<cmd>tabnew<cr>", { desc = "New Tab" })
 map("n", "<leader><tab>]", "<cmd>tabnext<cr>", { desc = "Next Tab" })
 map("n", "<leader><tab>d", "<cmd>tabclose<cr>", { desc = "Close Tab" })
 map("n", "<leader><tab>[", "<cmd>tabprevious<cr>", { desc = "Previous Tab" })
+map("n", "<leader><tab>t", "<cmd>tabnew | terminal<cr>", { desc = "Open Terminal Tab"})
 
 -- Center the cursor on screen when going page-up or page-down
 map("n", "<C-u>", "<C-u>zz")

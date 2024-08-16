@@ -1,5 +1,5 @@
 [user]
-	name = rcbxd
+	name = askorupskyy
 	email = 50280805+rcbxd@users.noreply.github.com
 [credential]
 	helper = store
@@ -7,3 +7,5 @@
   editor = nvim
 [pull]
 	ff = only
+[init]
+	defaultBranch = master
