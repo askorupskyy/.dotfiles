@@ -25,7 +25,6 @@ brew "wget"
 brew "ripgrep"
 
 # apps i use on daily basis
-cask "discord"
 cask "arc"
 cask "spotify"
 cask "insomnia"
