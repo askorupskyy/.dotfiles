@@ -3,6 +3,9 @@ local Util = require("util")
 
 local map = vim.keymap.set
 
+-- Paste with overwritting
+map("v", "p", "P")
+
 -- better up/down
 map({ "n", "x" }, "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 map({ "n", "x" }, "<Down>", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
@@ -39,7 +42,7 @@ map("n", "<leader>bb", "<cmd>e #<cr>", { desc = "Switch to Other Buffer" })
 map("n", "<leader>`", "<cmd>e #<cr>", { desc = "Switch to Other Buffer" })
 
 -- Clear search with <esc>
-map({ "i", "n" }, "<esc>", "<cmd>noh<cr><esc>", { desc = "Escape and clear hlsearch" })
+-- map({ "i", "n" }, "<esc>", "<cmd>noh<cr><esc>", { desc = "Escape and clear hlsearch" })
 
 -- Clear search, diff update and redraw
 -- taken from runtime/lua/_editor.lua
@@ -154,6 +157,9 @@ map("t", "<C-k>", "<cmd>wincmd k<cr>", { desc = "Go to upper window" })
 map("t", "<C-l>", "<cmd>wincmd l<cr>", { desc = "Go to right window" })
 map("t", "<C-/>", "<cmd>close<cr>", { desc = "Hide Terminal" })
 map("t", "<c-_>", "<cmd>close<cr>", { desc = "which_key_ignore" })
+map('n', '<Leader>tn', ':tabnew +terminal<CR>', { noremap = true, silent = true, desc = '[T]erminal [O]pen in new tab' })
+map('n', '<Leader>t_', ':new +terminal<CR>', { noremap = true, silent = true, desc = '[T]erminal [O]pen below' })
+map('n', '<Leader>t|', ':vnew +terminal<CR>', { noremap = true, silent = true, desc = '[T]erminal [O]pen side' })
 
 -- windows
 map("n", "<leader>ww", "<C-W>p", { desc = "Other window", remap = true })
@@ -171,7 +177,6 @@ map("n", "<leader><tab><tab>", "<cmd>tabnew<cr>", { desc = "New Tab" })
 map("n", "<leader><tab>]", "<cmd>tabnext<cr>", { desc = "Next Tab" })
 map("n", "<leader><tab>d", "<cmd>tabclose<cr>", { desc = "Close Tab" })
 map("n", "<leader><tab>[", "<cmd>tabprevious<cr>", { desc = "Previous Tab" })
-map("n", "<leader><tab>t", "<cmd>tabnew | terminal<cr>", { desc = "Open Terminal Tab"})
 
 -- Center the cursor on screen when going page-up or page-down
 map("n", "<C-u>", "<C-u>zz")

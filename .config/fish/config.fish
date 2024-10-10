@@ -33,5 +33,10 @@ set -gx PATH "$PNPM_HOME" $PATH
 set --export BUN_INSTALL "$HOME/.bun"
 set --export PATH $BUN_INSTALL/bin $PATH
 
+# disable automatic brew updates
+set HOMEBREW_NO_AUTO_UPDATE 1
 
 pyenv init - | source
+
+# Created by `pipx` on 2024-10-09 19:33:36
+set PATH $PATH /Users/bamboolio/.local/bin

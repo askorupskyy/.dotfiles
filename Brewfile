@@ -3,37 +3,33 @@ tap "homebrew/bundle"
 tap "homebrew/cask"
 tap "homebrew/core"
 tap "homebrew/services"
-tap "ngrok/ngrok"
 
-brew "autopep8"
-brew "go"
+# databases
 brew "mysql", restart_service: true
-brew "neofetch"
-brew "neovim"
-brew "pipenv"
+brew "postgresql@14"
 brew "redis", restart_service: true
-brew "ripgrep"
+
+# terminal tools
+brew "neovim"
+brew "fish"
+brew "lazygit"
+
+# tools / languages
+brew "go"
+brew "hugo"
+brew "pipx"
 brew "pyenv"
+brew "gsed"
 brew "git"
 brew "wget"
-brew "postgresql@14"
-brew "go"
-brew "lazygit"
-brew "neovide"
-brew "hugo"
-brew "fish"
-brew "gsed"
-cask "ngrok"
+brew "ripgrep"
 
 # apps i use on daily basis
 cask "discord"
 cask "arc"
-cask "microsoft-teams"
 cask "spotify"
-cask "telegram"
 cask "insomnia"
 cask "slack"
 cask "docker"
-cask "obsidian"
 cask "iterm2"
 cask "raycast"
