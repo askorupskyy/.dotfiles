@@ -190,7 +190,7 @@ return {
         ------------------------------------------
         -- javascript, typescript, and friends...
         ------------------------------------------
-        tsserver = {
+        ts_ls = {
           keys = {
             {
               "<leader>co",

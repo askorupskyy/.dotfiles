@@ -16,6 +16,7 @@ local Util = require("util")
 return {
   {
     "stevearc/conform.nvim",
+    version = "5.4.0",
     dependencies = { "mason.nvim" },
     lazy = true,
     cmd = "ConformInfo",
