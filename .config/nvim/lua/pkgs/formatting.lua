@@ -29,6 +29,15 @@ return {
         mode = { "n", "v" },
         desc = "Format Injected Langs",
       },
+      {
+        "<leader>ctf",
+        function()
+          vim.g.autoformat = not vim.g.autoformat
+          vim.notify(string.format("Autoformat %s.", vim.g.autoformat == true and "enaled" or "disabled"))
+        end,
+        mode = { "n", "v" },
+        desc = "Toggle autoformat",
+      },
     },
     init = function()
       require("util").on_very_lazy(function()
@@ -40,7 +49,10 @@ return {
             local plugin = require("lazy.core.config").plugins["conform.nvim"]
             local Plugin = require("lazy.core.plugin")
             local opts = Plugin.values(plugin, "opts", false)
-            require("conform").format(Util.merge(opts.format, { bufnr = buf }))
+
+            if vim.g.autoformat then
+              require("conform").format(Util.merge(opts.format, { bufnr = buf }))
+            end
           end,
           sources = function(buf)
             local ret = require("conform").list_formatters(buf)
