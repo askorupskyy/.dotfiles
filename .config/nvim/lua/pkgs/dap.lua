@@ -6,6 +6,10 @@ return {
       {
         "rcarriga/nvim-dap-ui",
         -- stylua: ignore
+        dependencies = {
+          "nvim-neotest/nvim-nio"
+        },
+        -- stylua: ignore
         keys = {
           { "<leader>du", function() require("dapui").toggle({ }) end, desc = "Dap UI" },
           { "<leader>de", function() require("dapui").eval() end, desc = "Eval", mode = {"n", "v"} },
@@ -66,9 +70,7 @@ return {
 
           -- You'll need to check that you have the required things installed
           -- online, please don't ask me how to install them :)
-          ensure_installed = {
-            { "js-debug-adapter" },
-          },
+          ensure_installed = { "js-debug-adapter" },
         },
       },
     },
@@ -128,6 +130,24 @@ return {
               name = "Attach",
               processId = require("dap.utils").pick_process,
               cwd = "${workspaceFolder}",
+            },
+            {
+              name = "Next.js: debug full stack",
+              type = "pwa-node",
+              request = "launch",
+              program = "${workspaceFolder}/node_modules/.bin/next",
+              runtimeArgs = { "--inspect" },
+              cwd = "${workspaceFolder}",
+              skipFiles = { "<node_internals>/**" },
+              sourceMaps = true,
+              smartStep = true,
+              serverReadyAction = {
+                action = "debugWithEdge",
+                killOnServerStop = true,
+                pattern = "- Local:.+(https?://.+)",
+                uriFormat = "%s",
+                webRoot = "${workspaceFolder}",
+              },
             },
           }
         end
