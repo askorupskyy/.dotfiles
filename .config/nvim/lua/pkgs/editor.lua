@@ -153,6 +153,7 @@ return {
             end
             return 0
           end,
+
           mappings = {
             i = {
               ["<a-i>"] = find_files_no_ignore,
