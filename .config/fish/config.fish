@@ -40,3 +40,6 @@ pyenv init - | source
 
 # Created by `pipx` on 2024-10-09 19:33:36
 set PATH $PATH /Users/bamboolio/.local/bin
+
+# Created by `pipx` on 2024-11-05 22:45:54
+set PATH $PATH /Users/askorupskyy/.local/bin
