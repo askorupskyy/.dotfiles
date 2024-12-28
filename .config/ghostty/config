@@ -1,0 +1,32 @@
+font-family = "JetBrainsMono Nerd Font Mono"
+font-size = 14
+
+font-feature = -calt
+font-feature = -liga
+font-feature = -dlig
+
+font-codepoint-map = U+21E1,U+21E3="JetBrainsMonoNL Nerd Font Mono"
+
+adjust-cell-height = 25%
+adjust-cell-width = 0%
+
+theme = main
+
+shell-integration-features = no-cursor
+cursor-style = underline
+cursor-style-blink = true
+
+adjust-underline-thickness = 2
+
+macos-titlebar-style = tabs
+macos-secure-input-indication = false
+
+window-decoration = true
+window-theme = system
+window-padding-balance = true
+window-padding-y = 2
+window-padding-x = 4
+
+window-inherit-working-directory = true
+
+clipboard-read = allow

@@ -1,6 +1,7 @@
 downloads
 .config/*
 !.config/nvim
+!.config/ghostty
 !.config/yarn
 !.config/fish
 .config/fish/fish_variables

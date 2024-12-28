@@ -43,3 +43,6 @@ set PATH $PATH /Users/bamboolio/.local/bin
 
 # Created by `pipx` on 2024-11-05 22:45:54
 set PATH $PATH /Users/askorupskyy/.local/bin
+
+set pure_symbol_git_unpushed_commits ""
+set pure_symbol_git_unpulled_commits ""
