@@ -12,7 +12,7 @@ Plugins:
   2. lewis6991/gitsigns.nvim 
   3. nvim-pack/nvim-spectre
   4. folke/todo-comments.nvim
-
+  5. bassamsdata/namu.nvim
 --]]
 
 local Util = require("util")
@@ -292,6 +292,49 @@ return {
             buf = bufnr,
           })
         end,
+      })
+    end,
+  },
+
+  {
+    "bassamsdata/namu.nvim",
+    config = function()
+      require("namu").setup({
+        -- Enable the modules you want
+        namu_symbols = {
+          enable = true,
+          options = {
+            row_position = "top10_right",
+            window = {
+              auto_size = false,
+              min_width = 100,
+              padding = 4,
+              border = "rounded",
+              show_footer = true,
+              footer_pos = "right",
+            },
+            display = {
+              mode = "icon", -- "icon" or "text" (prefix displayed as icons or text)
+              padding = 2, -- Padding around displayed symbols
+            },
+          }, -- here you can configure namu
+        },
+        -- Optional: Enable other modules if needed
+        colorscheme = {
+          enable = false,
+          options = {
+            persist = true, -- very efficient mechanism to Remember selected colorscheme
+            write_shada = false, -- If you open multiple nvim instances, then probably you need to enable this
+          },
+        },
+        ui_select = { enable = true }, -- vim.ui.select() wrapper
+      })
+      -- === Suggested Keymaps: ===
+      local namu = require("namu.namu_symbols")
+      local colorscheme = require("namu.colorscheme")
+      vim.keymap.set("n", "<leader>ns", ":Namu symbols<cr>", {
+        desc = "Jump to LSP symbol",
+        silent = true,
       })
     end,
   },
