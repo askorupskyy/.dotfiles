@@ -109,3 +109,18 @@ vim.api.nvim_create_autocmd({ "BufWinEnter", "BufRead", "BufNewFile" }, {
     vim.cmd("setlocal formatoptions-=cro")
   end,
 })
+
+-- Enable code ticks on `lsp.hover`
+vim.api.nvim_create_autocmd({ "BufNew" }, {
+  group = augroup("force_markdown_preview_lsp_hover"),
+  callback = function(params)
+    vim.defer_fn(function()
+      local winid = vim.api.nvim_exec2("echo bufwinid(" .. params.buf .. ")", { output = true })
+      local wintype = vim.api.nvim_exec2("echo win_gettype(" .. winid.output .. ")", { output = true })
+      local winid_num = tonumber(winid.output)
+      if wintype.output == "popup" then
+        vim.api.nvim_win_set_option(tonumber(winid_num), "conceallevel", 0)
+      end
+    end, 50)
+  end,
+})
