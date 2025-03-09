@@ -30,3 +30,5 @@ window-inherit-working-directory = true
 clipboard-read = allow
 
 keybind = cmd+backspace=text:\x15
+
+custom-shader = ./shaders/bloom050.glsl

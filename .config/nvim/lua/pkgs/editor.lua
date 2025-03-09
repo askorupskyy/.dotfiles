@@ -327,7 +327,7 @@ return {
             write_shada = false, -- If you open multiple nvim instances, then probably you need to enable this
           },
         },
-        ui_select = { enable = true }, -- vim.ui.select() wrapper
+        ui_select = { enable = false }, -- vim.ui.select() wrapper
       })
       -- === Suggested Keymaps: ===
       local namu = require("namu.namu_symbols")

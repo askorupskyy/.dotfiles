@@ -179,5 +179,10 @@ map("n", "<leader><tab>d", "<cmd>tabclose<cr>", { desc = "Close Tab" })
 map("n", "<leader><tab>[", "<cmd>tabprevious<cr>", { desc = "Previous Tab" })
 
 -- Center the cursor on screen when going page-up or page-down
-map("n", "<C-u>", "<C-u>zz")
-map("n", "<C-d>", "<C-d>zz")
+-- Method 1 - regular nvim keybind
+-- map("n", "<C-u>", "<C-u>zz")
+-- map("n", "<C-d>", "<C-d>zz")
+
+-- Method 2 - With animations: `MiniAnimate` executes a scroll animation by doing multiple mini-scrolls, so we have to wait for it to finish, disable scroll, center, and then enable again
+map("n", "<C-u>", "<C-u><cmd>lua MiniAnimate.execute_after('scroll', 'lua MiniAnimate.config.scroll.enable = false; vim.api.nvim_exec(\"normal! zz\", false); vim.defer_fn(function() MiniAnimate.config.scroll.enable = true end, 50)')<cr>")
+map("n", "<C-d>", "<C-d><cmd>lua MiniAnimate.execute_after('scroll', 'lua MiniAnimate.config.scroll.enable = false; vim.api.nvim_exec(\"normal! zz\", false); vim.defer_fn(function() MiniAnimate.config.scroll.enable = true end, 50)')<cr>")

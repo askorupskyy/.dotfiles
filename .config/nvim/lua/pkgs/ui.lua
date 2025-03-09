@@ -301,4 +301,40 @@ return {
       end
     end,
   },
+
+  {
+    "echasnovski/mini.animate",
+    version = "*",
+    init = function()
+      local animate = require("mini.animate")
+      animate.setup({
+        cursor = {
+          enable = true,
+          timing = animate.gen_timing.cubic({ duration = 100, unit = "total" }),
+          path = animate.gen_path.line({
+            predicate = function()
+              return true
+            end,
+          }),
+        },
+
+        scroll = {
+          enable = true,
+          timing = animate.gen_timing.exponential({ duration = 100, unit = "total" }),
+        },
+
+        resize = {
+          enable = false,
+        },
+
+        open = {
+          enable = false,
+        },
+
+        close = {
+          enable = false,
+        },
+      })
+    end,
+  },
 }
