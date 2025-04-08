@@ -257,46 +257,6 @@ return {
   },
 
   {
-    "https://codeberg.org/esensar/nvim-dev-container",
-    dependencies = "nvim-treesitter/nvim-treesitter",
-    init = function()
-      require("devcontainer").setup({
-        log_level = "trace",
-
-        attach_mounts = {
-          always = true,
-          neovim_config = {
-            enabled = true,
-            options = {},
-          },
-          neovim_data = {
-            enabled = true,
-            options = {},
-          },
-          neovim_state = {
-            enabled = true,
-            options = {},
-          },
-        },
-
-        terminal_handler = function(command)
-          vim.cmd("tabnew")
-          local bufnr = vim.api.nvim_get_current_buf()
-
-          Util.terminal(command, {
-            esc_esc = false,
-            ctrl_hjkl = false,
-            size = { width = vim.api.nvim_win_get_width(0), height = vim.api.nvim_win_get_height(0) },
-            title = "Devcontainer",
-            title_pos = "center",
-            buf = bufnr,
-          })
-        end,
-      })
-    end,
-  },
-
-  {
     "bassamsdata/namu.nvim",
     config = function()
       require("namu").setup({
