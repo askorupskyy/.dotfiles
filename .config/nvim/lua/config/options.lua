@@ -29,6 +29,7 @@ opt.inccommand = "nosplit" -- preview incremental substitute
 opt.laststatus = 3 -- global statusline
 opt.mouse = "a" -- Enable mouse mode
 opt.number = true -- Print line number
+opt.numberwidth = 4 -- Line number width
 opt.pumblend = 10 -- Popup blend
 opt.pumheight = 17 -- Maximum number of entries in a popup
 opt.cmdheight = 0 -- Push the command line prompt to the bottom
@@ -70,10 +71,6 @@ end
 -- Folding
 vim.opt.foldlevel = 99
 vim.opt.foldtext = "v:lua.require'util'.ui.foldtext()"
-
-if vim.fn.has("nvim-0.9.0") == 1 then
-  vim.opt.statuscolumn = [[%!v:lua.require'util'.ui.statuscolumn()]]
-end
 
 -- HACK: causes freezes on <= 0.9, so only enable on >= 0.10 for now
 if vim.fn.has("nvim-0.10") == 1 then

@@ -288,6 +288,16 @@ return {
             yaml = { keyOrdering = false },
           },
         },
+        ------------------------------------------
+        -- SOLIDITY
+        ------------------------------------------
+        solidity_ls_nomicfoundation = {
+          settings = {
+            cmd = { "nomicfoundation-solidity-language-server", "--stdio" },
+            filetypes = { "solidity" },
+            single_file_support = true,
+          },
+        },
       },
       ---@diagnostic enable:missing-fields
       -- Add additional lsp server setup here. Return true if you don't want this server to be setup with lspconfig
