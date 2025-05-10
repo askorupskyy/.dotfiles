@@ -24,3 +24,11 @@ require("lazy").setup({
     rtp = { disabled_plugins = { "gzip", "tarPlugin", "tohtml", "tutor", "zipPlugin" } },
   },
 })
+
+-- https://stackoverflow.com/questions/78611905/turn-off-neovim-messages-in-vscode
+if vim.g.vscode then
+  vim.g.cmdheight = 4 -- this is the new line I added
+  return
+end
+
+-- rest of the nvim config

@@ -17,10 +17,14 @@ return {
         opts = {},
         config = function(_, opts)
           -- setup dap config by VsCode launch.json file
-          -- require("dap.ext.vscode").load_launchjs()
           local dap = require("dap")
           local dapui = require("dapui")
           dapui.setup(opts)
+          dap.adapters.node = {
+            type = "executable",
+            command = "node",
+            args = { os.getenv("HOME") .. "/.local/share/nvim/mason/packages/node-debug2-adapter/out/src/nodeDebug.js" },
+          }
           dap.listeners.after.event_initialized["dapui_config"] = function()
             dapui.open({})
           end
