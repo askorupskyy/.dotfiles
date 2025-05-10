@@ -7,8 +7,8 @@ catppuccin/nvim (https://github.com/catppuccin/nvim)
 
 Catppuccin provides a pleasant color palette. It's also available
 for pretty much all terminals. So yeah, it's very adoptable.
-A thing I really like it's how flexible it is to tweak, check 
-this issue (https://github.com/catppuccin/nvim/discussions/323) 
+A thing I really like it's how flexible it is to tweak, check
+this issue (https://github.com/catppuccin/nvim/discussions/323)
 for some great examples showing entire transformations of the theme.
 
 --]]
@@ -43,7 +43,7 @@ return {
     },
     config = function(_, opts)
       local utils = require("catppuccin.utils.colors")
-      opts.flavour = "mocha"
+      opts.flavour = "auto"
       opts.color_overrides = {
         mocha = {
           base = "#1d1f28",

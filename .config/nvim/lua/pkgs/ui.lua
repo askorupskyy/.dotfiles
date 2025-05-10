@@ -6,9 +6,9 @@
 Let's keep everything cosmetic related here .
 
 Plugins:
-  1. nvim-lualine/lualine.nvim 
+  1. nvim-lualine/lualine.nvim
   2. nvim-tree/nvim-web-devicons
-  3. MunifTanjim/nui.nvim 
+  3. MunifTanjim/nui.nvim
   4. rcarriga/nvim-notify
   5. stevearc/dressing.nvim
 
@@ -34,7 +34,7 @@ return {
 
       local icons = require("config").icons
 
-      local colors = require("catppuccin.palettes").get_palette("mocha") or {}
+      local colors = require("catppuccin.palettes").get_palette(require("catppuccin").options.flavour) or {}
 
       local conditions = {
         buffer_not_empty = function()
@@ -206,7 +206,7 @@ return {
     "nvim-tree/nvim-web-devicons",
     lazy = true,
     init = function()
-      local colors = require("catppuccin.palettes").get_palette("mocha") or {}
+      local colors = require("catppuccin.palettes").get_palette(require("catppuccin").options.flavour) or {}
 
       require("nvim-web-devicons").setup({
         override = {
