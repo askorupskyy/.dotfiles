@@ -1,11 +1,11 @@
 [user]
-	name = askorupskyy
-	email = 50280805+rcbxd@users.noreply.github.com
+    name = askorupskyy
+    email = 50280805+rcbxd@users.noreply.github.com
 [credential]
-	helper = store
+    helper = store
 [core]
-  editor = nvim
+    editor = nvim
 [pull]
-	ff = only
+    ff = only
 [init]
-	defaultBranch = master
+    defaultBranch = master
