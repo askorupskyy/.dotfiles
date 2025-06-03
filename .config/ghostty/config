@@ -8,7 +8,7 @@ font-feature = -dlig
 adjust-cell-height = 25%
 adjust-cell-width = -5%
 
-theme = light
+theme = main
 
 shell-integration-features = no-cursor
 cursor-style = underline

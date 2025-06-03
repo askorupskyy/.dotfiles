@@ -62,7 +62,6 @@ $fish_path -c "nvm use latest & yarn install"
 
 /bin/zsh ~/.dotfiles/scripts/lsp.sh
 /bin/zsh ~/.dotfiles/scripts/links.sh
-/bin/zsh ~/.dotfiles/scripts/fonts.sh
 /bin/zsh ~/.dotfiles/scripts/tools.sh
 
 # terminate the script if the OS is not mac

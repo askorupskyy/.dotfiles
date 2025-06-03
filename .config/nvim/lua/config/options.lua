@@ -28,6 +28,7 @@ opt.ignorecase = true -- Ignore case
 opt.inccommand = "nosplit" -- preview incremental substitute
 opt.laststatus = 3 -- global statusline
 opt.mouse = "a" -- Enable mouse mode
+opt.breakindent = true -- Enable break indent
 opt.number = true -- Print line number
 opt.numberwidth = 4 -- Line number width
 opt.pumblend = 10 -- Popup blend

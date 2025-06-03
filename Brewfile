@@ -34,3 +34,6 @@ cask "iterm2"
 cask "raycast"
 cask "google-chrome"
 cask "ghostty"
+
+# fonts
+cask "font-meslo-lg-nerd-font"
