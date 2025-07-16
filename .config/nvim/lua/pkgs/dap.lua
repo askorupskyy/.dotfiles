@@ -11,15 +11,32 @@ return {
         },
         -- stylua: ignore
         keys = {
-          { "<leader>du", function() require("dapui").toggle({ }) end, desc = "Dap UI" },
+          { "<leader>du", function() require("dapui").toggle() end, desc = "Dap UI" },
           { "<leader>de", function() require("dapui").eval() end, desc = "Eval", mode = {"n", "v"} },
         },
         opts = {},
-        config = function(_, opts)
+        config = function(_)
           -- setup dap config by VsCode launch.json file
           local dap = require("dap")
           local dapui = require("dapui")
-          dapui.setup(opts)
+
+          ---@diagnostic disable: missing-fields
+          dapui.setup({
+            layouts = {
+              {
+                position = "bottom",
+                elements = { { id = "repl", size = 0.5 } },
+                size = 10,
+              },
+              {
+                size = 40,
+                position = "right",
+                elements = { { id = "breakpoints", size = 0.5 }, { id = "stacks", size = 0.5 } },
+              },
+            },
+          })
+          ---@diagnostic enable: missing-fields
+
           dap.adapters.node = {
             type = "executable",
             command = "node",
