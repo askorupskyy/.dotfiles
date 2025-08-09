@@ -25,8 +25,6 @@ fi
 # set brew path here
 brew_path=$HOMEBREW_PREFIX/bin
 
-echo $brew_path
-
 # add homebrew to path
 eval "$($brew_path/brew shellenv)"
 
