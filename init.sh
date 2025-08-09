@@ -23,12 +23,11 @@ fi
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 # set brew path here
-brew_path=$HOMEhomebrewBREW_PREFIX/bin
+brew_path=$HOMEBREW_PREFIX/bin
 
 echo $brew_path
 
 # add homebrew to path
-(echo; echo 'eval "$(/opt/homebrew/bin/brew shellenv)"') >> ~/.dotfiles/.zshrc
 eval "$($brew_path/brew shellenv)"
 
 source ~/.zshrc
@@ -54,13 +53,9 @@ $fish_path -c "fisher update"
 
 # install nvm, yarn, and global packages
 $fish_path -c "nvm install latest"
-# install node 16.16.0 for copilot to work on apple sillicon
-$fish_path -c "nvm install 16.16.0"
 $fish_path -c "nvm use latest"
-sudo $fish_path -c "nvm use latest & npm install -g yarn pnpm"
-$fish_path -c "nvm use latest & yarn install"
+$fish_path -c "nvm use latest"
 
-/bin/zsh ~/.dotfiles/scripts/lsp.sh
 /bin/zsh ~/.dotfiles/scripts/links.sh
 /bin/zsh ~/.dotfiles/scripts/tools.sh
 
