@@ -52,7 +52,11 @@ return {
     keys = {
       -- Frequently used
       { "<leader>,", "<cmd>Telescope buffers sort_mru=true sort_lastused=true<cr>", desc = "Switch Buffer" },
-      { "<leader>fg", Util.telescope("live_grep", { hidden = true, cwd = vim.loop.cwd() }), desc = "Grep (root dir)" },
+      {
+        "<leader>fg",
+        Util.telescope("live_grep", { hidden = true, additional_args = { "--hidden" }, cwd = vim.loop.cwd() }),
+        desc = "Grep (root dir)",
+      },
       { "<leader>:", "<cmd>Telescope command_history<cr>", desc = "Command History" },
       { "<leader><space>", Util.telescope("files"), desc = "Find Files (root dir)" },
       -- file browser
