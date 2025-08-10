@@ -52,14 +52,13 @@ $fish_path -c "fisher update"
 # install nvm, yarn, and global packages
 $fish_path -c "nvm install latest"
 $fish_path -c "nvm use latest"
-$fish_path -c "nvm use latest"
 
 /bin/zsh ~/.dotfiles/scripts/links.sh
 /bin/zsh ~/.dotfiles/scripts/tools.sh
 
 # terminate the script if the OS is not mac
 if [ "$OS" = "Linux" ]; then
-  exit 1
+  exit 0
 fi
 
 # width for icons in menu bar
