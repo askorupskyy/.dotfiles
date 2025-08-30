@@ -145,6 +145,7 @@ return {
       -- titles
       vim.api.nvim_set_hl(0, "TelescopePromptTitle", { fg = colors.pink, bg = colors.none })
       vim.api.nvim_set_hl(0, "TelescopeResultsTitle", { fg = colors.pink, bg = colors.none })
+      vim.api.nvim_set_hl(0, "TelescopePreviewTitle", { fg = colors.pink, bg = colors.none })
 
       return {
         defaults = {
