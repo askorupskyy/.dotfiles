@@ -120,17 +120,19 @@ return {
           }
           return { fg = mode_color[vim.fn.mode()] }
         end,
-        padding = { right = 1 },
+        padding = 0,
       })
 
       ins_left({
         "filetype",
         icon_only = true,
+        padding = { left = 2, right = 1 },
       })
 
       ins_left({
         Util.lualine.pretty_path(),
         cond = conditions.buffer_not_empty,
+        padding = 0,
       })
 
       ins_left({
@@ -177,20 +179,7 @@ return {
         icon = icons.misc.lsp,
       })
 
-      ins_right({
-        "o:encoding",
-        fmt = string.upper,
-        cond = conditions.hide_in_width,
-      })
-
-      ins_right({
-        "location",
-      })
-
-      ins_right({
-        "progress",
-        padding = { left = 0, right = 1 },
-      })
+      ins_right({ "location" })
 
       return config
     end,

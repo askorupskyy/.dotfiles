@@ -131,6 +131,21 @@ return {
         actions.open_qflist(0)
       end
 
+      local colors = require("catppuccin.palettes").get_palette(require("catppuccin").options.flavour) or {}
+
+      -- backgrounds
+      vim.api.nvim_set_hl(0, "TelescopePromptNormal", { fg = colors.none, bg = colors.none })
+      vim.api.nvim_set_hl(0, "TelescopeResultsNormal", { fg = colors.none, bg = colors.none })
+      vim.api.nvim_set_hl(0, "TelescopePreviewNormal", { fg = colors.none, bg = colors.none })
+      -- borders
+      vim.api.nvim_set_hl(0, "TelescopeBorder", { fg = colors.pink, bg = colors.none }) -- pink
+      vim.api.nvim_set_hl(0, "TelescopePromptBorder", { fg = colors.pink, bg = colors.none })
+      vim.api.nvim_set_hl(0, "TelescopeResultsBorder", { fg = colors.pink, bg = colors.none })
+      vim.api.nvim_set_hl(0, "TelescopePreviewBorder", { fg = colors.pink, bg = colors.none })
+      -- titles
+      vim.api.nvim_set_hl(0, "TelescopePromptTitle", { fg = colors.pink, bg = colors.none })
+      vim.api.nvim_set_hl(0, "TelescopeResultsTitle", { fg = colors.pink, bg = colors.none })
+
       return {
         defaults = {
           layout_config = { prompt_position = "top", preview_cutoff = 100 },
@@ -138,9 +153,9 @@ return {
           selection_caret = "  ",
           selection_strategy = "reset",
           sorting_strategy = "ascending",
-          winblend = 2,
-          borderchars = { " ", " ", " ", " ", " ", " ", " ", " " },
-          layout_strategy = "horizontal",
+          winblend = 5,
+          borderchars = { "─", "│", "─", "│", "╭", "╮", "╯", "╰" },
+          layout_strategy = "flex",
           scroll_strategy = "cycle",
           file_ignore_patterns = { "node_modules/.*", ".git/.*", "yarn.lock", "\\.next/.*" },
 
