@@ -33,7 +33,7 @@ function M.detectors.lsp(buf)
   end
 
   local roots = {} ---@type string[]
-  for _, client in pairs(Util.lsp.get_clients({ bufnr = buf })) do
+  for _, client in pairs(vim.lsp.get_clients({ bufnr = buf })) do
     -- only check workspace folders, since we're not interested in clients running in single file mode
     local workspace = client.config.workspace_folders
     for _, ws in pairs(workspace or {}) do
