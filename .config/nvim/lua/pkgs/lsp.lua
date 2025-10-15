@@ -18,6 +18,21 @@ return {
     "saghen/blink.cmp",
   },
   config = function()
+    vim.diagnostic.config({
+      virtual_text = {
+        prefix = "●",
+      },
+      severity_sort = true,
+      signs = {
+        text = {
+          [vim.diagnostic.severity.ERROR] = "",
+          [vim.diagnostic.severity.WARN] = "",
+          [vim.diagnostic.severity.INFO] = "",
+          [vim.diagnostic.severity.HINT] = "",
+        },
+      },
+    })
+
     vim.api.nvim_create_autocmd("LspAttach", {
       group = vim.api.nvim_create_augroup("ag__lsp_attach", { clear = true }),
       callback = function(args)

@@ -35,3 +35,4 @@ keybind = cmd+shift+h=goto_split:left
 keybind = cmd+shift+l=goto_split:right
 keybind = cmd+shift+k=goto_split:up
 keybind = cmd+shift+j=goto_split:down
+keybind = shift+enter=text:\n
