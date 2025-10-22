@@ -9,7 +9,7 @@ find and replace, git gutters, ...
 
 Plugins:
   1. nvim-telescope/telescope.nvim
-  2. lewis6991/gitsigns.nvim 
+  2. lewis6991/gitsigns.nvim
   3. nvim-pack/nvim-spectre
   4. folke/todo-comments.nvim
   5. bassamsdata/namu.nvim
@@ -27,6 +27,7 @@ return {
   {
     "nvim-telescope/telescope.nvim",
     cmd = "Telescope",
+    tag = "0.1.8",
     dependencies = {
       {
         "nvim-telescope/telescope-fzf-native.nvim",
