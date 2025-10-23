@@ -67,3 +67,5 @@ defaults -currentHost write -globalDomain NSStatusItemSelectionPadding -int 16
 
 # disable press and hold for keys in vscode
 defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
+# install vscode extensions
+xargs -n1 code --install-extension < ~/.dotfiles/vscode/extensions.txt

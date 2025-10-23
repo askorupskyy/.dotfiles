@@ -1,0 +1,59 @@
+{
+  "workbench.colorTheme": "GitHub Light",
+  // editor
+  "editor.fontFamily": "JetBrainsMono Nerd Font",
+  "editor.fontWeight": "normal",
+  "editor.indentSize": "tabSize",
+  "window.zoomLevel": 1,
+  "editor.minimap.enabled": false, 
+  // terminal
+  "terminal.integrated.defaultProfile.osx": "fish",
+  "terminal.integrated.allowChords": false,
+  // vim settings
+  "vim.normalModeKeyBindingsNonRecursive": [
+    // smart scrolling (keep cursor centered)
+    { "before": ["<C-d>"], "after": ["<C-d>", "z", "z"] },
+    { "before": ["<C-u>"], "after": ["<C-u>", "z", "z"] },
+    // folding
+    { "before": ["z", "c"], "commands": ["editor.fold"] },
+    { "before": ["z", "o"], "commands": ["editor.unfold"] },
+    { "before": ["z", "M"], "commands": ["editor.foldAll"] },
+    { "before": ["z", "R"], "commands": ["editor.unfoldAll"] }
+  ],
+  "vim.useSystemClipboard": true,
+  "vim.hlsearch": true,
+  "vim.incsearch": true,
+  "vim.smartcase": true,
+  "vim.foldfix": true,
+  // folding
+  "editor.foldingHighlight": false,
+  "editor.foldingImportsByDefault": false,
+  "editor.showFoldingControls": "always",
+  "editor.foldingStrategy": "auto",
+  // misc
+  "output.smartScroll.enabled": false,
+  "[dockercompose]": {
+    "editor.insertSpaces": true,
+    "editor.tabSize": 2,
+    "editor.autoIndent": "advanced",
+    "editor.quickSuggestions": {
+      "other": true,
+      "comments": false,
+      "strings": true
+    },
+    "editor.defaultFormatter": "redhat.vscode-yaml"
+  },
+  "[github-actions-workflow]": {
+    "editor.defaultFormatter": "redhat.vscode-yaml"
+  },
+  // python
+  "python.defaultInterpreterPath": "/usr/local/bin/python3", 
+  // find it faster
+  "find-it-faster.general.openFileInPreviewEditor": false,
+  "find-it-faster.general.useTerminalInEditor": true,
+  "find-it-faster.general.useGitIgnoreExcludes": true,
+  "find-it-faster.general.batTheme": "GitHub",
+  "find-it-faster.general.killTerminalAfterUse": true,
+  "find-it-faster.general.clearTerminalAfterUse": true,
+  "terminal.external.osxExec": "ghostty",
+}
