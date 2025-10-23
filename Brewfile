@@ -23,6 +23,8 @@ brew "gsed"
 brew "git"
 brew "wget"
 brew "ripgrep"
+brew "bat"
+brew "fzf"
 
 # apps i use on daily basis
 cask "arc"
@@ -33,6 +35,7 @@ cask "raycast"
 cask "google-chrome"
 cask "ghostty"
 cask "cloudflare-warp"
+cask "visual-studio-code"
 
 # fonts
 cask "font-meslo-lg-nerd-font"

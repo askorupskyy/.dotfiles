@@ -10,3 +10,6 @@ ln -sf ~/.dotfiles/.gitconfig ~/.gitconfig
 ln -sf ~/.dotfiles/.nvimrc ~/.nvimrc
 ln -sf ~/.dotfiles/.config ~/.config
 ln -sf ~/.dotfiles/.p10k.zsh ~/.p10k.zsh
+
+# sync vscode settings
+ln -sf ~/.dotfiles/vscode/* ~/Library/Application Support/Code/*
