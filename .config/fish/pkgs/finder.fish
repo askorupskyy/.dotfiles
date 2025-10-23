@@ -10,9 +10,9 @@ function ff --description "Search files in current dir"
 
   if test -n "$file"
     $EDITOR $file
+  else
+    echo "No file selected"
   end
-
-  echo "No file selected"
 end
 
 
@@ -30,9 +30,9 @@ function fg --description "Search files based on contents"
     $EDITOR -g $file
   else if test -n "$file"
     $EDITOR $file
+  else
+    echo "No file selected"
   end
-
-  echo "No file selected"
 end
 
 function gb --description "Search git branches"
@@ -40,7 +40,7 @@ function gb --description "Search git branches"
 
   if test -n "$branch"
     git checkout (string trim (string replace 'remotes/origin/' '' $branch))
+  else
+    echo "No branch selected"
   end
-
-  echo "No branch selected"
 end
