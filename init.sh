@@ -30,7 +30,7 @@ eval "$($brew_path/brew shellenv)"
 
 source ~/.zshrc
 
-# install all of the apps required 
+# install all of the apps required
 $brew_path/brew bundle --file=~/.dotfiles/Brewfile
 
 # assign fish path to variable
@@ -64,3 +64,6 @@ fi
 # width for icons in menu bar
 defaults -currentHost write -globalDomain NSStatusItemSpacing -int 10
 defaults -currentHost write -globalDomain NSStatusItemSelectionPadding -int 16
+
+# disable press and hold for keys in vscode
+defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
