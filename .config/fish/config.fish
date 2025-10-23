@@ -46,3 +46,10 @@ set PATH $PATH /Users/askorupskyy/.local/bin
 
 set pure_symbol_git_unpushed_commits ""
 set pure_symbol_git_unpulled_commits ""
+
+set -gx EDITOR code
+
+set _fzf_preview_command 'bat --style=numbers --color=always --line-range :500 {}'
+set _fzf_layout_window '--preview-window=top:50%'
+
+source ~/.dotfiles/.config/fish/pkgs/finder.fish

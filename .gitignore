@@ -1,8 +1,14 @@
+# basic config
 .config/*
 !.config/nvim
 !.config/ghostty
 !.config/yarn
 !.config/fish
+# fish
 .config/fish/fish_variables
-.config/fish/*/**
+.config/fish/themes/
+.config/fish/functions/
+.config/fish/completions/
+.config/fish/conf.d/
+# yarn
 .config/yarn/global/node_modules
