@@ -1,5 +1,4 @@
 astro-build.astro-vscode
-christian-kohler.path-intellisense
 dbaeumer.vscode-eslint
 eamodio.gitlens
 editorconfig.editorconfig
@@ -11,6 +10,7 @@ gleam.gleam
 golang.go
 gruntfuggly.todo-tree
 inferrinizzard.prettier-sql-vscode
+ionutvmi.path-autocomplete
 ms-azuretools.vscode-containers
 ms-azuretools.vscode-docker
 ms-python.debugpy
@@ -27,6 +27,5 @@ ms-vscode.remote-explorer
 redhat.vscode-yaml
 shazbot.surroundelection
 streetsidesoftware.code-spell-checker
-tomrijndorp.find-it-faster
 vscodevim.vim
 zignd.html-css-class-completion

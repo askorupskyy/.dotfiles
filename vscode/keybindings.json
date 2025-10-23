@@ -276,16 +276,5 @@
     "key": "s a",
     "command": "extension.surroundSelection",
     "when": "vim.mode == 'Visual' && editorTextFocus"
-  },
-  // find it faster - telescope-like plugin for vscode
-  {
-    "key": "space f f",
-    "command": "find-it-faster.findFiles",
-    "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
-  },
-  {
-    "key": "space f g",
-    "command": "find-it-faster.findWithinFiles",
-    "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
   }
 ]

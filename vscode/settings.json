@@ -5,7 +5,7 @@
   "editor.fontWeight": "normal",
   "editor.indentSize": "tabSize",
   "window.zoomLevel": 1,
-  "editor.minimap.enabled": false, 
+  "editor.minimap.enabled": false,
   // terminal
   "terminal.integrated.defaultProfile.osx": "fish",
   "terminal.integrated.allowChords": false,
@@ -47,13 +47,6 @@
     "editor.defaultFormatter": "redhat.vscode-yaml"
   },
   // python
-  "python.defaultInterpreterPath": "/usr/local/bin/python3", 
-  // find it faster
-  "find-it-faster.general.openFileInPreviewEditor": false,
-  "find-it-faster.general.useTerminalInEditor": true,
-  "find-it-faster.general.useGitIgnoreExcludes": true,
-  "find-it-faster.general.batTheme": "GitHub",
-  "find-it-faster.general.killTerminalAfterUse": true,
-  "find-it-faster.general.clearTerminalAfterUse": true,
-  "terminal.external.osxExec": "ghostty",
+  "python.defaultInterpreterPath": "/usr/local/bin/python3",
+  "terminal.external.osxExec": "ghostty"
 }
