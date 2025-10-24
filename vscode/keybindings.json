@@ -2,22 +2,17 @@
 [
   // Navigation
   {
-    "key": "ctrl-h",
-    "command": "workbench.action.navigateLeft",
-    "when": "editorTextFocus || !inputFocus"
-  },
-  {
-    "key": "ctrl-l",
+    "key": "ctrl+l",
     "command": "workbench.action.navigateRight",
     "when": "editorTextFocus || !inputFocus"
   },
   {
-    "key": "ctrl-k",
+    "key": "ctrl+k",
     "command": "workbench.action.navigateUp",
     "when": "editorTextFocus || !inputFocus"
   },
   {
-    "key": "ctrl-j",
+    "key": "ctrl+j",
     "command": "workbench.action.navigateDown",
     "when": "editorTextFocus || !inputFocus"
   },
@@ -25,33 +20,6 @@
     "key": "space ,",
     "command": "workbench.action.showAllEditors",
     "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
-  },
-  {
-    "key": "space e",
-    "command": "runCommands",
-    "args": {
-      "commands": [
-        "workbench.action.toggleSidebarVisibility",
-        "workbench.files.action.focusFilesExplorer"
-      ]
-    },
-    "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus) && !sideBarFocus"
-  },
-  {
-    "key": "space e",
-    "command": "runCommands",
-    "args": {
-      "commands": [
-        "workbench.action.toggleSidebarVisibility",
-        "workbench.action.focusActiveEditorGroup"
-      ]
-    },
-    "when": "sideBarFocus && !inputFocus"
-  },
-  {
-    "key": "space e",
-    "when": "vim.mode == 'Normal' && editorTextFocus && foldersViewVisible",
-    "command": "workbench.action.toggleSidebarVisibility"
   },
   // coding
   {
@@ -115,24 +83,10 @@
     "when": "vim.mode == 'Normal' && editorTextFocus"
   },
   {
-    "key": "space s g",
-    "command": "workbench.action.findInFiles",
-    "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
-  },
-  {
-    "key": "space g g",
-    "command": "runCommands",
-    "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)",
-    "args": {
-      "commands": ["workbench.view.scm", "workbench.scm.focus"]
-    }
-  },
-  {
     "key": "ctrl-n",
     "command": "editor.action.addSelectionToNextFindMatch",
     "when": "(vim.mode == 'Normal' || vim.mode == 'Visual') && (editorTextFocus || !inputFocus)"
   },
-
   // File Explorer
   {
     "key": "r",
@@ -259,11 +213,6 @@
     "key": "cmd+t",
     "command": "workbench.action.terminal.toggleTerminal",
     "when": "(vim.mode == 'Normal' && (editorTextFocus || !inputFocus)) || terminalFocus"
-  },
-  {
-    "key": "ctrl+t",
-    "command": "workbench.action.terminal.new",
-    "when": "terminalFocus"
   },
   // todo view
   {
