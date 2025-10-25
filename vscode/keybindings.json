@@ -2,19 +2,24 @@
 [
   // Navigation
   {
+    "key": "ctrl+h",
+    "command": "workbench.action.navigateLeft",
+    "when": "editorFocus || terminalFocus || !inputFocus"
+  },
+  {
     "key": "ctrl+l",
     "command": "workbench.action.navigateRight",
-    "when": "editorTextFocus || !inputFocus"
+    "when": "editorTextFocus || terminalFocus || !inputFocus"
   },
   {
     "key": "ctrl+k",
     "command": "workbench.action.navigateUp",
-    "when": "editorTextFocus || !inputFocus"
+    "when": "editorTextFocus || terminalFocus || !inputFocus"
   },
   {
     "key": "ctrl+j",
     "command": "workbench.action.navigateDown",
-    "when": "editorTextFocus || !inputFocus"
+    "when": "editorTextFocus || terminalFocus || !inputFocus"
   },
   {
     "key": "space ,",
@@ -188,26 +193,6 @@
     "command": "workbench.action.splitEditorDown",
     "when": "vim.mode == 'Normal' && editorTextFocus"
   },
-  {
-    "key": "cmd+h",
-    "command": "workbench.action.focusLeftGroup",
-    "when": "vim.mode == 'Normal' && editorTextFocus"
-  },
-  {
-    "key": "cmd+l",
-    "command": "workbench.action.focusRightGroup",
-    "when": "vim.mode == 'Normal' && editorTextFocus"
-  },
-  {
-    "key": "cmd+k",
-    "command": "workbench.action.focusAboveGroup",
-    "when": "vim.mode == 'Normal' && editorTextFocus"
-  },
-  {
-    "key": "cmd+j",
-    "command": "workbench.action.focusBelowGroup",
-    "when": "vim.mode == 'Normal' && editorTextFocus"
-  },
   // terminal
   {
     "key": "cmd+t",
@@ -220,15 +205,9 @@
     "command": "todo-tree-view.open",
     "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
   },
-  // surround
-  {
-    "key": "s a",
-    "command": "extension.surroundSelection",
-    "when": "vim.mode == 'Visual' && editorTextFocus"
-  },
   // window mgmt
   {
-    "key": "cmd+w",
+    "key": "ctrl+w",
     "command": "workbench.action.closeWindow",
     "when": "!terminalFocus"
   },
