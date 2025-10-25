@@ -226,10 +226,15 @@
     "command": "extension.surroundSelection",
     "when": "vim.mode == 'Visual' && editorTextFocus"
   },
-  // file modification: close editor
+  // window mgmt
   {
-    "key": "ctrl+w q",
-    "command": "workbench.action.closeActiveEditor",
-    "when": "(vim.mode == 'Normal' && editorTextFocus) || !inputFocus"
+    "key": "cmd+w",
+    "command": "workbench.action.closeWindow",
+    "when": "!terminalFocus"
+  },
+  {
+    "key": "ctrl+w",
+    "command": "workbench.action.terminal.kill",
+    "when": "terminalFocus"
   }
 ]
