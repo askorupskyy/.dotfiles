@@ -215,5 +215,20 @@
     "key": "ctrl+w",
     "command": "workbench.action.terminal.kill",
     "when": "terminalFocus"
-  }
+  },
+  {
+    "key": "space s a",
+    "command": "surround.add",
+    "when": "vim.mode == 'Visual' && editorTextFocus"
+  },
+  {
+    "key": "space s d",
+    "command": "surround.delete",
+    "when": "vim.mode == 'Visual' && editorTextFocus"
+  },
+  {
+    "key": "space s r",
+    "command": "surround.change",
+    "when": "vim.mode == 'Visual' && editorTextFocus"
+  },
 ]

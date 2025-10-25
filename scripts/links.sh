@@ -12,4 +12,5 @@ ln -sf ~/.dotfiles/.config ~/.config
 ln -sf ~/.dotfiles/.p10k.zsh ~/.p10k.zsh
 
 # sync vscode settings
-ln -sf ~/.dotfiles/vscode/* ~/Library/Application Support/Code/*
+ln -sf ~/.dotfiles/vscode/settings.json ~/Library/Application\ Support/Code/User/settings.json
+ln -sf ~/.dotfiles/vscode/keybindings.json ~/Library/Application\ Support/Code/User/keybindings.json

@@ -10,6 +10,7 @@
   "terminal.integrated.defaultProfile.osx": "fish",
   "terminal.integrated.allowChords": false,
   // vim settings
+  "vim.leader": "<space>",
   "vim.normalModeKeyBindingsNonRecursive": [
     // smart scrolling (keep cursor centered)
     { "before": ["<C-d>"], "after": ["<C-d>", "z", "z"] },
@@ -18,7 +19,12 @@
     { "before": ["z", "c"], "commands": ["editor.fold"] },
     { "before": ["z", "o"], "commands": ["editor.unfold"] },
     { "before": ["z", "M"], "commands": ["editor.foldAll"] },
-    { "before": ["z", "R"], "commands": ["editor.unfoldAll"] }
+    { "before": ["z", "R"], "commands": ["editor.unfoldAll"] }, 
+  ],
+  "vim.visualModeKeyBindingsNonRecursive": [
+    // folding
+    { "before": ["z", "c"], "commands": ["editor.fold"] },
+    { "before": ["z", "o"], "commands": ["editor.unfold"] },
   ],
   "vim.useSystemClipboard": true,
   "vim.hlsearch": true,
