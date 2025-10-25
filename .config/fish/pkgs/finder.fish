@@ -17,7 +17,7 @@ end
 
 
 function fg --description "Search files based on contents"
-  set _fzf_preview_command 'bat --style=numbers --color=always --highlight-line {2} {1}'
+  set _fzf_preview_command 'bat --style=header,numbers --color=always -r {2}::15 --highlight-line {2} {1}'
   set -l file (
     rg $_rg_options  --line-number --no-heading "" \
     | fzf --ansi --delimiter=: --preview "$_fzf_preview_command" --border --prompt="Live grep > " "$_fzf_layout_window" \
