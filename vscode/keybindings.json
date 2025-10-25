@@ -225,5 +225,11 @@
     "key": "s a",
     "command": "extension.surroundSelection",
     "when": "vim.mode == 'Visual' && editorTextFocus"
+  },
+  // file modification: close editor
+  {
+    "key": "ctrl+w q",
+    "command": "workbench.action.closeActiveEditor",
+    "when": "(vim.mode == 'Normal' && editorTextFocus) || !inputFocus"
   }
 ]
