@@ -208,7 +208,7 @@
   // window mgmt
   {
     "key": "ctrl+w",
-    "command": "workbench.action.closeWindow",
+    "command": "workbench.action.closeActiveEditor",
     "when": "!terminalFocus"
   },
   {
@@ -220,16 +220,16 @@
   {
     "key": "space s a",
     "command": "surround.add",
-    "when": "vim.mode == 'Visual' && editorTextFocus"
+    "when": "(vim.mode == 'Normal' || vim.mode == 'Visual') && (editorTextFocus || !inputFocus)"
   },
   {
     "key": "space s d",
-    "command": "surround.delete",
-    "when": "vim.mode == 'Visual' && editorTextFocus"
+    "command": "surround.remove",
+    "when": "(vim.mode == 'Normal' || vim.mode == 'Visual') && (editorTextFocus || !inputFocus)"
   },
   {
     "key": "space s r",
     "command": "surround.change",
-    "when": "vim.mode == 'Visual' && editorTextFocus"
-  },
+    "when": "(vim.mode == 'Normal' || vim.mode == 'Visual') && (editorTextFocus || !inputFocus)"
+  }
 ]
