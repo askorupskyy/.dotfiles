@@ -231,5 +231,11 @@
     "key": "space s r",
     "command": "surround.change",
     "when": "(vim.mode == 'Normal' || vim.mode == 'Visual') && (editorTextFocus || !inputFocus)"
+  },
+  // other stuff
+  {
+    "key": "space o r",
+    "command": "workbench.action.openRecent",
+    "when": "(vim.mode == 'Normal') && (editorTextFocus || !inputFocus)"
   }
 ]
