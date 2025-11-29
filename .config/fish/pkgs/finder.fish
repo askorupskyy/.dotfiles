@@ -5,11 +5,31 @@ set _rg_options --hidden -S --glob '!.git/*'
 set _fzf_layout_window '--preview-window=top:50%'
 
 function ff --description "Search files in current dir"
+  set -l command ""     # default editor filled later
+  set -l root "."       # default search directory
+
+  # TODO: make this a separate function later
+  while test (count $argv) -gt 0
+    switch $argv[1]
+      case --command
+        set command $argv[2]
+        set argv $argv[3..-1]
+      case --root
+        set root $argv[2]
+        set argv $argv[3..-1]
+    end
+  end
+
+  # Default to $EDITOR
+  if test -z "$command"
+    set command $EDITOR
+  end
+
   set _fzf_preview_command 'bat --style=numbers --color=always --line-range :500 {}'
-  set -l file (rg $_rg_options --files . | fzf --ansi --preview "$_fzf_preview_command" --border --prompt="Find files > " "$_fzf_layout_window")
+  set -l file (rg $_rg_options --files $root | fzf --ansi --preview "$_fzf_preview_command" --border --prompt="Find files > " "$_fzf_layout_window")
 
   if test -n "$file"
-    $EDITOR $file
+    $command $file
   else
     echo "No file selected"
   end
@@ -42,5 +62,15 @@ function gb --description "Search git branches"
     git checkout (string trim (string replace 'remotes/origin/' '' $branch))
   else
     echo "No branch selected"
+  end
+end
+
+function gs --description "Search git status files"
+  set -l file (git status --porcelain | awk '{print $2}' | fzf --ansi --preview "git diff --color=always -- {1} | bat --style=numbers --color=always --paging=never -l diff -" --border --prompt="Git status > " "$_fzf_layout_window")
+
+  if test -n "$file"
+    $EDITOR $file
+  else
+    echo "No file selected"
   end
 end
