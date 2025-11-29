@@ -19,12 +19,12 @@
     { "before": ["z", "c"], "commands": ["editor.fold"] },
     { "before": ["z", "o"], "commands": ["editor.unfold"] },
     { "before": ["z", "M"], "commands": ["editor.foldAll"] },
-    { "before": ["z", "R"], "commands": ["editor.unfoldAll"] }, 
+    { "before": ["z", "R"], "commands": ["editor.unfoldAll"] }
   ],
   "vim.visualModeKeyBindingsNonRecursive": [
     // folding
     { "before": ["z", "c"], "commands": ["editor.fold"] },
-    { "before": ["z", "o"], "commands": ["editor.unfold"] },
+    { "before": ["z", "o"], "commands": ["editor.unfold"] }
   ],
   "vim.useSystemClipboard": true,
   "vim.hlsearch": true,
@@ -54,5 +54,11 @@
   },
   // python
   "python.defaultInterpreterPath": "/usr/local/bin/python3",
-  "terminal.external.osxExec": "ghostty"
+  "terminal.external.osxExec": "ghostty",
+  "github.copilot.enable": {
+    "*": true,
+    "plaintext": false,
+    "markdown": false,
+    "scminput": false
+  }
 }
