@@ -56,7 +56,6 @@
   },
   // python
   "python.defaultInterpreterPath": "/usr/local/bin/python3",
-  "terminal.external.osxExec": "ghostty",
   // copilot
   "github.copilot.enable": {
     "*": true,
@@ -64,5 +63,4 @@
     "markdown": false,
     "scminput": false
   }
-}
 }
