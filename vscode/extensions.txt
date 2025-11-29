@@ -26,6 +26,7 @@ ms-vscode.cpptools-extension-pack
 ms-vscode.cpptools-themes
 ms-vscode.remote-explorer
 redhat.vscode-yaml
+prisma.prisma
 streetsidesoftware.code-spell-checker
 vscodevim.vim
 zignd.html-css-class-completion
