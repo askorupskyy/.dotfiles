@@ -26,7 +26,10 @@ function ff --description "Search files in current dir"
   end
 
   set _fzf_preview_command 'bat --style=numbers --color=always --line-range :500 {}'
-  set -l file (rg $_rg_options --files $root | fzf --ansi --preview "$_fzf_preview_command" --border --prompt="Find files > " "$_fzf_layout_window")
+  set -l file (
+    rg $_rg_options --files $root \
+    | fzf -m --ansi --preview "$_fzf_preview_command" --border --prompt="Find files > " "$_fzf_layout_window"
+  )
 
   if test -n "$file"
     $command $file
@@ -40,7 +43,7 @@ function fg --description "Search files based on contents"
   set _fzf_preview_command 'bat --style=header,numbers --color=always -r {2}::15 --highlight-line {2} {1}'
   set -l file (
     rg $_rg_options  --line-number --no-heading "" \
-    | fzf --ansi --delimiter=: --preview "$_fzf_preview_command" --border --prompt="Live grep > " "$_fzf_layout_window" \
+    | fzf -m --ansi --delimiter=: --preview "$_fzf_preview_command" --border --prompt="Live grep > " "$_fzf_layout_window" \
     | awk -F: '{print $1":"$2}'
   )
 

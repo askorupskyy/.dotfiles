@@ -11,6 +11,8 @@
   "terminal.integrated.defaultProfile.osx": "fish",
   "terminal.integrated.allowChords": false,
   "terminal.external.osxExec": "ghostty",
+  "terminal.integrated.suggest.cdPath": "off",
+  "terminal.integrated.suggest.enabled": false,
   // vim settings
   "vim.leader": "<space>",
   "vim.normalModeKeyBindingsNonRecursive": [
@@ -56,6 +58,10 @@
   },
   // python
   "python.defaultInterpreterPath": "/usr/local/bin/python3",
+  // typescript
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
   // copilot
   "github.copilot.enable": {
     "*": true,
