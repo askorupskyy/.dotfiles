@@ -7,6 +7,7 @@
   "editor.lineNumbers": "relative",
   "window.zoomLevel": 0.2,
   "editor.minimap.enabled": false,
+  "editor.formatOnSave": true,
   // terminal
   "terminal.integrated.defaultProfile.osx": "fish",
   "terminal.integrated.allowChords": false,
@@ -60,6 +61,10 @@
   "python.defaultInterpreterPath": "/usr/local/bin/python3",
   // typescript
   "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  // astro
+  "[astro]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   // copilot
