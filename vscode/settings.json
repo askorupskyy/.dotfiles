@@ -5,7 +5,7 @@
   "editor.fontWeight": "normal",
   "editor.indentSize": "tabSize",
   "editor.lineNumbers": "relative",
-  "window.zoomLevel": 1,
+  "window.zoomLevel": 0.2,
   "editor.minimap.enabled": false,
   // terminal
   "terminal.integrated.defaultProfile.osx": "fish",

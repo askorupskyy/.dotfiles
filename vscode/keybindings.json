@@ -197,7 +197,6 @@
   {
     "key": "cmd+t",
     "command": "workbench.action.terminal.toggleTerminal",
-    "when": "(vim.mode == 'Normal' && (editorTextFocus || !inputFocus)) || terminalFocus"
   },
   // todo view
   {
