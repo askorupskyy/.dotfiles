@@ -5,8 +5,9 @@ set _rg_options --hidden -S --glob '!.git/*'
 set _fzf_layout_window '--preview-window=top:50%'
 
 function ff --description "Search files in current dir"
-  set -l command ""     # default editor filled later
-  set -l root "."       # default search directory
+  set -l command ""     # default editor filled later unless other command given
+  set -l root "."       # default search directory - default current dir
+  set -l killAfter 0    # kill fzf when editor exits - default false
 
   # TODO: make this a separate function later
   while test (count $argv) -gt 0
@@ -17,6 +18,9 @@ function ff --description "Search files in current dir"
       case --root
         set root $argv[2]
         set argv $argv[3..-1]
+      case --kill-after
+        set killAfter 1
+        set argv $argv[2..-1]
     end
   end
 
@@ -33,6 +37,9 @@ function ff --description "Search files in current dir"
 
   if test -n "$file"
     $command $file
+    if test $killAfter -eq 1
+      exit;
+    end
   else
     echo "No file selected"
   end

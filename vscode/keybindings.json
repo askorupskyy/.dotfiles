@@ -4,22 +4,22 @@
   {
     "key": "ctrl+h",
     "command": "workbench.action.navigateLeft",
-    "when": "editorFocus || terminalFocus || !inputFocus"
+    "when": "editorFocus || terminalFocus || chatInputHasFocus || !inputFocus"
   },
   {
     "key": "ctrl+l",
     "command": "workbench.action.navigateRight",
-    "when": "editorTextFocus || terminalFocus || !inputFocus"
+    "when": "editorTextFocus || terminalFocus || chatInputHasFocus || !inputFocus"
   },
   {
     "key": "ctrl+k",
     "command": "workbench.action.navigateUp",
-    "when": "editorTextFocus || terminalFocus || !inputFocus"
+    "when": "editorTextFocus || terminalFocus || chatInputHasFocus || !inputFocus"
   },
   {
     "key": "ctrl+j",
     "command": "workbench.action.navigateDown",
-    "when": "editorTextFocus || terminalFocus || !inputFocus"
+    "when": "editorTextFocus || terminalFocus || chatInputHasFocus || !inputFocus"
   },
   {
     "key": "space ,",
@@ -197,6 +197,38 @@
   {
     "key": "cmd+t",
     "command": "workbench.action.terminal.toggleTerminal",
+  },
+  // chat
+  {
+    "key": "cmd+c",
+    "command": "workbench.action.chat.toggle"
+  },
+  {
+    "key": "space c a s",
+    "command": "runCommands",
+    "args": {
+      "commands": [
+        "workbench.action.chat.focusInput",
+        "workbench.action.chat.toggle"
+      ]
+    },
+    "when": "(vim.mode == 'Normal' || vim.mode == 'Visual') && editorTextFocus"
+  },
+  // finder
+  {
+    "key": "space f f",
+    "command": "runCommands",
+    "args": {
+      "commands": [
+        // create new empty terminal if none exist
+        { "command": "workbench.action.terminal.new" },
+        { "command": "workbench.action.terminal.sendSequence", "args": { "text": "ff --kill-after" }
+        },
+        { "command": "workbench.action.terminal.focus" },
+        { "command": "workbench.action.terminal.sendSequence", "args": { "text": "\u000D"} }
+      ]
+    },
+    "when": "(vim.mode == 'Normal' || vim.mode == 'Visual') && editorTextFocus"
   },
   // todo view
   {
