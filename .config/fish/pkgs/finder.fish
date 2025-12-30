@@ -37,16 +37,25 @@ function ff --description "Search files in current dir"
 
   if test -n "$file"
     $command $file
-    if test $killAfter -eq 1
-      exit;
-    end
   else
     echo "No file selected"
+  end
+
+  if test $killAfter -eq 1
+    exit;
   end
 end
 
 
 function fg --description "Search files based on contents"
+  set killAfter 0    # exit terminal fzf exits - default false
+
+  switch $argv[1]
+    case --kill-after
+      set killAfter 1
+      set argv $argv[2..-1]
+  end
+
   set _fzf_preview_command 'bat --style=header,numbers --color=always -r {2}::15 --highlight-line {2} {1}'
   set -l file (
     rg $_rg_options  --line-number --no-heading "" \
@@ -62,6 +71,10 @@ function fg --description "Search files based on contents"
     $EDITOR $file
   else
     echo "No file selected"
+  end
+
+  if test $killAfter -eq 1
+    exit;
   end
 end
 
