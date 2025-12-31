@@ -16,7 +16,7 @@ I use VSCode as my main editor at the moment. It works just like nvim with a few
 
 - `<leader>ff` - find files.
 - `<leader>fg` - live grep.
-- `<leader>sa` - surround. my on plugin.
+- `<leader>sa` - surround. my own plugin.
 - `<cmd-c>` - toggle chat.
 - `<leader>cas` - add selection to chat.
 - `<cmd-t>` - toggle terminal.
