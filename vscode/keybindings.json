@@ -122,7 +122,8 @@
   // chat
   {
     "key": "cmd+c",
-    "command": "workbench.action.chat.toggle"
+    "command": "workbench.action.chat.toggle",
+    "when": "!terminalFocus"
   },
   // finder
   {
