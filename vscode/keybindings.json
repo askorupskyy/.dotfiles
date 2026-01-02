@@ -72,11 +72,6 @@
     "command": "editor.action.goToImplementation",
     "when": "vim.mode == 'Normal' && editorTextFocus"
   },
-  {
-    "key": "space g d d",
-    "command": "editor.action.goToDefinition",
-    "when": "vim.mode == 'Normal' && editorTextFocus"
-  },
   // Debug
   {
     "key": "space d a",
@@ -148,10 +143,15 @@
       "commands": [
         // create new empty terminal if none exist
         { "command": "workbench.action.terminal.new" },
-        { "command": "workbench.action.terminal.sendSequence", "args": { "text": "ff --kill-after" }
+        {
+          "command": "workbench.action.terminal.sendSequence",
+          "args": { "text": "ff --kill-after" }
         },
         { "command": "workbench.action.terminal.focus" },
-        { "command": "workbench.action.terminal.sendSequence", "args": { "text": "\u000D"} }
+        {
+          "command": "workbench.action.terminal.sendSequence",
+          "args": { "text": "\u000D" }
+        }
       ]
     },
     "when": "(vim.mode == 'Normal' || vim.mode == 'Visual') && (editorTextFocus || !inputFocus)"
@@ -163,10 +163,15 @@
       "commands": [
         // create new empty terminal if none exist
         { "command": "workbench.action.terminal.new" },
-        { "command": "workbench.action.terminal.sendSequence", "args": { "text": "fg --kill-after" }
+        {
+          "command": "workbench.action.terminal.sendSequence",
+          "args": { "text": "fg --kill-after" }
         },
         { "command": "workbench.action.terminal.focus" },
-        { "command": "workbench.action.terminal.sendSequence", "args": { "text": "\u000D"} }
+        {
+          "command": "workbench.action.terminal.sendSequence",
+          "args": { "text": "\u000D" }
+        }
       ]
     },
     "when": "(vim.mode == 'Normal' || vim.mode == 'Visual') && (editorTextFocus || !inputFocus)"
