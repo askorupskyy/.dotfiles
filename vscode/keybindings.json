@@ -124,17 +124,6 @@
     "key": "cmd+c",
     "command": "workbench.action.chat.toggle"
   },
-  {
-    "key": "space c a s",
-    "command": "runCommands",
-    "args": {
-      "commands": [
-        "workbench.action.chat.focusInput",
-        "workbench.action.chat.toggle"
-      ]
-    },
-    "when": "(vim.mode == 'Normal' || vim.mode == 'Visual') && editorTextFocus"
-  },
   // finder
   {
     "key": "space f f",
