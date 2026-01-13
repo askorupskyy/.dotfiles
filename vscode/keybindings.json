@@ -63,13 +63,8 @@
     "when": "(vim.mode == 'Normal' && editorTextFocus) || !inputFocus"
   },
   {
-    "key": "space space",
-    "command": "workbench.action.quickOpen",
-    "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
-  },
-  {
     "key": "space g d",
-    "command": "editor.action.goToImplementation",
+    "command": "editor.action.revealDefinition",
     "when": "vim.mode == 'Normal' && editorTextFocus"
   },
   // Debug
@@ -121,7 +116,7 @@
   },
   // chat
   {
-    "key": "cmd+c",
+    "key": "cmd+shift+c",
     "command": "workbench.action.chat.toggle",
     "when": "!terminalFocus"
   },
@@ -151,7 +146,6 @@
     "command": "runCommands",
     "args": {
       "commands": [
-        // create new empty terminal if none exist
         { "command": "workbench.action.terminal.new" },
         {
           "command": "workbench.action.terminal.sendSequence",
@@ -203,6 +197,6 @@
   {
     "key": "space o r",
     "command": "workbench.action.openRecent",
-    "when": "(vim.mode == 'Normal') && (editorTextFocus || !inputFocus)"
+    "when": "((vim.mode == 'Normal') && (editorTextFocus || !inputFocus) || inWelcome)"
   }
 ]
