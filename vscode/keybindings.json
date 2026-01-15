@@ -67,6 +67,14 @@
     "command": "editor.action.revealDefinition",
     "when": "vim.mode == 'Normal' && editorTextFocus"
   },
+  {
+    "key": "ctrl + o",
+    "command": "workbench.action.navigateBack"
+  },
+  {
+    "key": "ctrl + i",
+    "command": "workbench.action.navigateForward"
+  },
   // Debug
   {
     "key": "space d a",
@@ -113,6 +121,11 @@
   {
     "key": "cmd+t",
     "command": "workbench.action.terminal.toggleTerminal"
+  },
+  {
+    "key": "ctrl+t",
+    "command": "workbench.action.terminal.new",
+    "when": "terminalFocus"
   },
   // chat
   {

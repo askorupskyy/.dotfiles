@@ -8,6 +8,7 @@
   "window.zoomLevel": 0.2,
   "editor.minimap.enabled": false,
   "editor.formatOnSave": true,
+  "workbench.activityBar.location": "hidden",
   // terminal
   "terminal.integrated.defaultProfile.osx": "fish",
   "terminal.integrated.allowChords": false,
