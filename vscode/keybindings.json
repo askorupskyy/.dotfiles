@@ -211,5 +211,14 @@
     "key": "space o r",
     "command": "workbench.action.openRecent",
     "when": "((vim.mode == 'Normal') && (editorTextFocus || !inputFocus) || inWelcome)"
+  },
+  // resizing
+  {
+    "key": "alt+l",
+    "command": "workbench.action.increaseViewSize"
+  },
+  {
+    "key": "alt+h",
+    "command": "workbench.action.decreaseViewSize"
   }
 ]
