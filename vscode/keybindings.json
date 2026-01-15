@@ -4,22 +4,22 @@
   {
     "key": "ctrl+h",
     "command": "workbench.action.navigateLeft",
-    "when": "editorFocus || terminalFocus || chatInputHasFocus || !inputFocus"
+    "when": "editorFocus || terminalFocus || chatInputHasFocus || !inputFocus || inDebugRepl"
   },
   {
     "key": "ctrl+l",
     "command": "workbench.action.navigateRight",
-    "when": "editorTextFocus || terminalFocus || chatInputHasFocus || !inputFocus"
+    "when": "editorTextFocus || terminalFocus || chatInputHasFocus || !inputFocus || inDebugRepl"
   },
   {
     "key": "ctrl+k",
     "command": "workbench.action.navigateUp",
-    "when": "editorTextFocus || terminalFocus || chatInputHasFocus || !inputFocus"
+    "when": "editorTextFocus || terminalFocus || chatInputHasFocus || !inputFocus || inDebugRepl"
   },
   {
     "key": "ctrl+j",
     "command": "workbench.action.navigateDown",
-    "when": "editorTextFocus || terminalFocus || chatInputHasFocus || !inputFocus"
+    "when": "editorTextFocus || terminalFocus || chatInputHasFocus || !inputFocus || inDebugRepl"
   },
   {
     "key": "space ,",
