@@ -34,4 +34,4 @@ cask "cloudflare-warp"
 cask "visual-studio-code"
 
 # fonts
-cask "font-meslo-lg-nerd-font"
+cask "font-jetbrains-mono-nerd-font"

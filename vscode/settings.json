@@ -1,7 +1,7 @@
 {
   "workbench.colorTheme": "GitHub Light",
   // editor
-  "editor.fontFamily": "JetBrainsMono Nerd Font",
+  "editor.fontFamily": "JetBrainsMono Nerd Font Mono",
   "editor.fontWeight": "normal",
   "editor.indentSize": "tabSize",
   "editor.lineNumbers": "relative",
