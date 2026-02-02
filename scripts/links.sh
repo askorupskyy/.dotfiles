@@ -8,7 +8,10 @@ ln -sf ~/.dotfiles/.vimrc ~/.vimrc
 ln -sf ~/.dotfiles/.vim ~/.vim
 ln -sf ~/.dotfiles/.gitconfig ~/.gitconfig
 ln -sf ~/.dotfiles/.nvimrc ~/.nvimrc
+// needs to be recursive for all subfolders and files in the .config directory
 ln -sf ~/.dotfiles/.config ~/.config
+ln -sf ~/.dotfiles/.config/nvim ~/.config/nvim
+ln -sf ~/.dotfiles/.config/fish/config.fish ~/.config/fish/config.fish
 ln -sf ~/.dotfiles/.p10k.zsh ~/.p10k.zsh
 
 # sync vscode settings

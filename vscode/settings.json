@@ -25,16 +25,12 @@
     { "before": ["z", "c"], "commands": ["editor.fold"] },
     { "before": ["z", "o"], "commands": ["editor.unfold"] },
     { "before": ["z", "M"], "commands": ["editor.foldAll"] },
-    { "before": ["z", "R"], "commands": ["editor.unfoldAll"] },
-    // paste without overwriting clipboard
-    { "before": ["p"], "after": ["\"", "0", "p"] }
+    { "before": ["z", "R"], "commands": ["editor.unfoldAll"] }
   ],
   "vim.visualModeKeyBindingsNonRecursive": [
     // folding
     { "before": ["z", "c"], "commands": ["editor.fold"] },
-    { "before": ["z", "o"], "commands": ["editor.unfold"] },
-    // paste without overwriting clipboard
-    { "before": ["p"], "after": ["\"", "0", "p"] }
+    { "before": ["z", "o"], "commands": ["editor.unfold"] }
   ],
   "vim.useSystemClipboard": true,
   "vim.hlsearch": true,
