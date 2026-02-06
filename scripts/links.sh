@@ -11,8 +11,8 @@ ln -sf ~/.dotfiles/.nvimrc ~/.nvimrc
 // needs to be recursive for all subfolders and files in the .config directory
 ln -sf ~/.dotfiles/.config ~/.config
 ln -sf ~/.dotfiles/.config/nvim ~/.config/nvim
+ln -sf ~/.dotfiles/.config/ghostty ~/.config/ghostty
 ln -sf ~/.dotfiles/.config/fish/config.fish ~/.config/fish/config.fish
-ln -sf ~/.dotfiles/.p10k.zsh ~/.p10k.zsh
 
 # sync vscode settings
 ln -sf ~/.dotfiles/vscode/settings.json ~/Library/Application\ Support/Code/User/settings.json

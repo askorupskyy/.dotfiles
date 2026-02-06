@@ -21,6 +21,7 @@ brew "wget"
 brew "ripgrep"
 brew "bat"
 brew "fzf"
+brew "lf"
 
 # apps i use on daily basis
 cask "arc"
