@@ -111,7 +111,7 @@ function fe
   set selection (
     printf "%s\n" (find . -maxdepth 1 -mindepth 1) "./.." | \
     fzf -m --ansi $_fzf_layout_window --border --prompt "Find files > " \
-      --preview "if test -d {}; ls -la {}; else; $_fzf_preview_command; end"
+      --preview "fish -c 'if test -d {}; ls -la {}; else; $_fzf_preview_command; end'"
   )
 
   if test -n "$selection"
