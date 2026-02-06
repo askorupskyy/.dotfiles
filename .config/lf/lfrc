@@ -15,9 +15,8 @@ set cleaner ~/.config/lf/preview
 
 # navigation
 map p :set preview!
-
-# files
-set hidden true
+map H :set hidden!
+map <space> shell
 
 # run "ff" in fish when ff is typed
 map <tab> toggle
