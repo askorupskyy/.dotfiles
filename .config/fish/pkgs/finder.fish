@@ -97,3 +97,32 @@ function gs --description "Search git status files"
     echo "No file selected"
   end
 end
+
+
+function fe
+  set _fzf_preview_command 'bat --style=numbers --color=always --line-range :500 {}'
+  set root $argv[1]
+
+  if test -z "$root"
+    # set to output from cwd if no argument given
+    set root (pwd)
+  end
+
+  set selection (
+    printf "%s\n" (find . -maxdepth 1 -mindepth 1) "./.." | \
+    fzf -m --ansi $_fzf_layout_window --border --prompt "Find files > " \
+      --preview "if test -d {}; ls -la {}; else; $_fzf_preview_command; end"
+  )
+
+  if test -n "$selection"
+    if test -d "$selection"
+      cd "$selection"
+      fe $root
+    else if test -f "$selection"
+      cd $root
+      $EDITOR "$selection"
+    else
+      cd $root
+    end
+  end
+end
