@@ -1,6 +1,7 @@
 # basic config
 .config/*
 !.config/nvim
+!.config/lf
 !.config/ghostty
 !.config/yarn
 !.config/fish

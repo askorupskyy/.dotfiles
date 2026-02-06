@@ -24,6 +24,7 @@ set pure_show_system_time_pos right
 
 # set vscode as the default editor
 set -gx EDITOR code
+set -gx OPENER code # specific for LF
 
 # load my own plugins
 source ~/.dotfiles/.config/fish/pkgs/finder.fish

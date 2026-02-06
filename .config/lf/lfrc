@@ -1,0 +1,23 @@
+# Use shell colors (from fish)
+set shell fish
+
+# ui
+set drawbox true
+set ratios 1:1
+
+# preview
+set preview true
+set previewer ~/.config/lf/preview
+set dirpreviews true
+
+# redraw behavior
+set cleaner ~/.config/lf/preview
+
+# navigation
+map p :set preview!
+
+# files
+set hidden true
+
+# run "ff" in fish when ff is typed
+map <tab> toggle

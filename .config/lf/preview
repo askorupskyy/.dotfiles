@@ -1,0 +1,26 @@
+#!/bin/sh
+
+file="$1"
+w="$2"
+h="$3"
+x="$4"
+y="$5"
+
+# Directories
+if [ -d "$file" ]; then
+    ls --color=always "$file"
+    exit 0
+fi
+
+# Text files → bat
+if file --mime "$file" | grep -q text; then
+    bat \
+        --color=always \
+        --style=numbers,changes \
+        --terminal-width "$w" \
+        "$file"
+    exit 0
+fi
+
+# Fallback
+file "$file"
