@@ -29,7 +29,7 @@ function ff --description "Search files in current dir"
     set command $EDITOR
   end
 
-  set _fzf_preview_command 'bat --style=numbers --color=always --line-range :500 {}'
+  set -l _fzf_preview_command 'bat --style=numbers --color=always --line-range :500 {}'
   set -l file (
     rg $_rg_options --files $root \
     | fzf -m --ansi --preview "$_fzf_preview_command" --border --prompt="Find files > " "$_fzf_layout_window"
@@ -48,7 +48,7 @@ end
 
 
 function fg --description "Search files based on contents"
-  set killAfter 0    # exit terminal fzf exits - default false
+  set -l killAfter 0    # exit terminal fzf exits - default false
 
   switch $argv[1]
     case --kill-after
@@ -56,7 +56,7 @@ function fg --description "Search files based on contents"
       set argv $argv[2..-1]
   end
 
-  set _fzf_preview_command 'bat --style=header,numbers --color=always -r {2}::15 --highlight-line {2} {1}'
+  set -l _fzf_preview_command 'bat --style=header,numbers --color=always -r {2}::15 --highlight-line {2} {1}'
   set -l file (
     rg $_rg_options  --line-number --no-heading "" \
     | fzf -m --ansi --delimiter=: --preview "$_fzf_preview_command" --border --prompt="Live grep > " "$_fzf_layout_window" \
@@ -100,29 +100,34 @@ end
 
 
 function fe
-  set _fzf_preview_command 'bat --style=numbers --color=always --line-range :500 {}'
-  set root $argv[1]
+  set -l _fzf_preview_command 'bat --style=numbers --color=always --line-range :500 {}'
+  set -l root $argv[1]
+  set -l current_path $argv[2]
 
   if test -z "$root"
     # set to output from cwd if no argument given
     set root (pwd)
   end
 
-  set selection (
+  set -l selection (
     printf "%s\n" (find . -maxdepth 1 -mindepth 1) "./.." | \
     fzf -m --ansi $_fzf_layout_window --border --prompt "Find files > " \
       --preview "fish -c 'if test -d {}; ls -la {}; else; $_fzf_preview_command; end'"
   )
 
+  set -l selection path (string join / $current_path $selection)
+
   if test -n "$selection"
     if test -d "$selection"
       cd "$selection"
-      fe $root
+      fe $root "$selection_path/"
     else if test -f "$selection"
       cd $root
-      $EDITOR "$selection"
+      $EDITOR "$selection_path"
     else
       cd $root
     end
+  else
+    cd $root
   end
 end

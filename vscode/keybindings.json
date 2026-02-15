@@ -220,5 +220,16 @@
   {
     "key": "alt+h",
     "command": "workbench.action.decreaseViewSize"
+  },
+  // diagnostics
+  {
+    "key": "[ d",
+    "command": "editor.action.marker.prev",
+    "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
+  },
+  {
+    "key": "] d",
+    "command": "editor.action.marker.next",
+    "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
   }
 ]
